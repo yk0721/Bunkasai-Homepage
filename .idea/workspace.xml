@@ -9,12 +9,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6d94dc60-cbe7-401f-92df-e24bcae75621" name="Changes" comment="Project Created">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bunkasai_System/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Bunkasai_System/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Bunkasai_System/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/Bunkasai_System/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/Bunkasai_System/static/assets/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/css/main.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/Bunkasai_System/static/assets/css/main.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/assets/js/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/Bunkasai_System/static/assets/js/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bunkasai_System/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/Bunkasai_System/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bunkasai_System/static/assets/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/Bunkasai_System/static/assets/css/main.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,12 +31,12 @@
     &quot;assignee&quot;: &quot;yk0721&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/yk0721/Bunkasai-Homepage.git&quot;,
-    &quot;accountId&quot;: &quot;b692c2d8-403f-4815-bee8-c34b0bd13415&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/yk0721/Bunkasai-Homepage.git",
+    "accountId": "e0e10a7b-8cfe-4f3f-a44d-a237ed696ebf"
   }
-}</component>
+}]]></component>
   <component name="NamedScopeManager">
     <scope name="SCSS_compile" pattern="file:Bunkasai_System/static/assets/css/main.css" />
   </component>
@@ -55,6 +51,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JavaScript デバッグ.index.html.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
@@ -79,8 +76,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-PY-243.21565.199" />
-        <option value="bundled-python-sdk-cab1f2013843-4ae2d6a61b08-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.21565.199" />
+        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-WS-243.25659.40" />
       </set>
     </attachedChunks>
   </component>
@@ -94,6 +90,7 @@
       <updated>1745582866373</updated>
       <workItem from="1745582867375" duration="156000" />
       <workItem from="1745583026260" duration="4773000" />
+      <workItem from="1746444158404" duration="4312000" />
     </task>
     <task id="LOCAL-00001" summary="Project Created">
       <option name="closed" value="true" />

@@ -38,7 +38,6 @@
             const eventDate = new Date('2025-09-20T09:00:00');
             const now = new Date();
             const diff = eventDate - now;
-
             if (diff > 0) {
                 const days = Math.floor(diff / (1000 * 60 * 60 * 24));
                 const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
