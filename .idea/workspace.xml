@@ -2,16 +2,21 @@
 <project version="4">
   <component name="AnalysisUIOptions">
     <option name="ANALYZE_INJECTED_CODE" value="false" />
+    <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d94dc60-cbe7-401f-92df-e24bcae75621" name="Changes" comment="Project Created">
-      <change afterPath="$PROJECT_DIR$/Bunkasai_System/Bunkasai_template/C_exhibit_template.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coming_soon/img/92314_0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coming_soon/img/92315_0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coming_soon/img/92316_0.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coming_soon/img/S__11378705.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/coming_soon/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Bunkasai-Homepage.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Bunkasai-Homepage.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/footer_template.css" beforeDir="false" afterPath="$PROJECT_DIR$/Bunkasai_System/Bunkasai_template/footer_template.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/footer_template.html" beforeDir="false" afterPath="$PROJECT_DIR$/Bunkasai_System/Bunkasai_template/footer_template.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +57,7 @@
   &quot;associatedIndex&quot;: 5
 }</component>
   <component name="ProjectId" id="2wDj6oiFfmHhuazro893lng4ufG" />
-  <component name="ProjectLevelVcsManager">
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -67,7 +72,7 @@
     "JavaScript デバッグ.footer_template.html.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Suzuka",
+    "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
@@ -75,17 +80,17 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "run.code.analysis.last.selected.profile": "aDefault",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
+    "settings.editor.selected.configurable": "preferences.fileTypes",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/coming_soon/img" />
       <recent name="C:\Users\sinko\WebstormProjects\Bunkasai-Homepage\Bunkasai_System\Bunkasai_template" />
       <recent name="$PROJECT_DIR$/Bunkasai_System" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/Bunkasai_System/static" />
-      <recent name="$PROJECT_DIR$/Bunkasai_System/assets/css" />
     </key>
   </component>
   <component name="RunManager">
