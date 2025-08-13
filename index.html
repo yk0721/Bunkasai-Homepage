@@ -8,156 +8,167 @@
 </head>
 
 <body>
-  <div id="header"></div>
-  <section class="mv-section">
-    <img src="assets/img/mv.jpg" class="mv-image">
-    <div class="mv-overlay">
-      <img src="assets/img/logo.jpg" class="logo">
-      <div class="info">
-        <p class="date">9/20 - 9/21</p>
-        <p class="name">南山高等・中学校男子部</p>
-        <div class="container">
-          <h2 class="countdown-title">開催まであと</h2>
-          <div class="countdown-timer">
-            <div class="time-block">
-              <span id="days">00</span>
-              <span class="label">日</span>
-            </div>
-            <div class="time-block">
-              <span id="hours">00</span>
-              <span class="label">時間</span>
-            </div>
-            <div class="time-block">
-              <span id="minutes">00</span>
-              <span class="label">分</span>
-            </div>
-            <div class="time-block">
-              <span id="seconds">00</span>
-              <span class="label">秒</span>
-            </div>
-            <script>
-              fetch("Bunkasai_template/header.html")
-                .then((response) => response.text())
-                .then((data) => document.querySelector("#header").innerHTML = data);
-              function updateCountdown() {
-                // 飛翔祭開始まで
-                const eventDate = new Date('2025-09-20T09:00:00');
-                const now = new Date();
-                const diff = eventDate - now;
-                if (diff > 0) {
-                  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-                  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-                  document.getElementById('days').textContent = days.toString().padStart(2, '0');
-                  document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
-                  document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
-                  document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
-                } else {
-                  // 開始後
-                  document.getElementById('days').textContent = '00';
-                  document.getElementById('hours').textContent = '00';
-                  document.getElementById('minutes').textContent = '00';
-                  document.getElementById('seconds').textContent = '00';
+  <body>
+    <section class="top-img">
+      <div id="header">
+      </div>
+      <div class="image_container">
+        <div class="back-resize">
+          <img src="./assets/img/S__11378705.jpg" class="pcback_img">
+          <img src="./assets/img/92316_0.jpg" class="spback_img">
+          <div class="image_overlay">
+            <div class="logo_container">
+              <img src="./assets/img/logo.png" class="logo_image">
+              <div class="items">
+                2025
+              </div>
+              <br>
+              <div class="items">
+                in 南山高等学校・中学校男子部
+              </div>
+            </div>
+            <h2 class="countdown-title">開催まであと</h2><br>
+            <div class="countdown-timer">
+              <div class="time-block">
+                <span id="days">00</span>
+                <span class="label">日</span>
+              </div>
+              <div class="time-block">
+                <span id="hours">00</span>
+                <span class="label">時間</span>
+              </div>
+              <div class="time-block">
+                <span id="minutes">00</span>
+                <span class="label">分</span>
+              </div>
+              <div class="time-block">
+                <span id="seconds">00</span>
+                <span class="label">秒</span>
+              </div>
+              <script>
+                fetch("template/header.html")
+                  .then((response) => response.text())
+                  .then((data) => document.querySelector("#header").innerHTML = data);
+                function updateCountdown() {
+                  // 飛翔祭開始まで
+                  const eventDate = new Date('2025-09-20T09:00:00');
+                  const now = new Date();
+                  const diff = eventDate - now;
+                  if (diff > 0) {
+                    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
 
-                  document.querySelector('.countdown-title').textContent = '飛翔祭開催中！';
+                    document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                    document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                    document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                    document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+                  } else {
+                    // 開始後
+                    document.getElementById('days').textContent = '00';
+                    document.getElementById('hours').textContent = '00';
+                    document.getElementById('minutes').textContent = '00';
+                    document.getElementById('seconds').textContent = '00';
+
+                    document.querySelector('.countdown-title').textContent = '飛翔祭開催中！';
+                  }
                 }
-              }
-              setInterval(updateCountdown, 1000);
-            </script>
+
+
+                setInterval(updateCountdown, 1000);
+              </script>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="overview">
-    <h3>ここに概要</h3>
-  </section>
+    <section class="overview">
+      <h3>ここに概要</h3>
+    </section>
 
-  <section class="exhib-slider">
-    <h2>クラス企画</h2>
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><a href="">J2A</a></div>
-        <div class="swiper-slide"><a href="">J2B</a></div>
-        <div class="swiper-slide"><a href="">J2C</a></div>
-        <div class="swiper-slide"><a href="">J2D</a></div>
-        <div class="swiper-slide"><a href="">J2E</a></div>
-        <div class="swiper-slide"><a href="">J3A</a></div>
-        <div class="swiper-slide"><a href="">J3B</a></div>
-        <div class="swiper-slide"><a href="">J3C</a></div>
-        <div class="swiper-slide"><a href="">J3D</a></div>
-        <div class="swiper-slide"><a href="">J3E</a></div>
-        <div class="swiper-slide"><a href="">S1A</a></div>
-        <div class="swiper-slide"><a href="">S1B</a></div>
-        <div class="swiper-slide"><a href="">S1C</a></div>
-        <div class="swiper-slide"><a href="">S1D</a></div>
-        <div class="swiper-slide"><a href="">S1E</a></div>
-        <div class="swiper-slide"><a href="">S2A</a></div>
-        <div class="swiper-slide"><a href="">S2B</a></div>
-        <div class="swiper-slide"><a href="">S2C</a></div>
-        <div class="swiper-slide"><a href="">S2D</a></div>
-        <div class="swiper-slide"><a href="">S2E</a></div>
-      </div>
-      <div class="swiper-pagination"></div>
-      <h2>部活・有志企画</h2>
+    <section class="exhib-slider">
+      <h2>クラス企画</h2>
       <div class="swiper-container">
         <div class="swiper-wrapper">
-          <div class="swiper-slide"><a href="">写真部</a></div>
-          <div class="swiper-slide"><a href="">英語部</a></div>
-          <div class="swiper-slide"><a href="">理科部天文班</a></div>
-          <div class="swiper-slide"><a href="">理科部生物班</a></div>
-          <div class="swiper-slide"><a href="">理科部地質班</a></div>
-          <div class="swiper-slide"><a href="">将棋部</a></div>
-          <div class="swiper-slide"><a href="">奇術部</a></div>
-          <div class="swiper-slide"><a href="">ブラスバンド部</a></div>
-          <div class="swiper-slide"><a href="">美術同好会</a></div>
-          <div class="swiper-slide"><a href="">歴史研究同好会</a></div>
-          <div class="swiper-slide"><a href="">演劇同好会</a></div>
-          <div class="swiper-slide"><a href="">パソコン同好会</a></div>
-          <div class="swiper-slide"><a href="">アマチュア無線同好会</a></div>
-          <div class="swiper-slide"><a href=""></a></div>
+          <div class="swiper-slide"><a href="">J2A</a></div>
+          <div class="swiper-slide"><a href="">J2B</a></div>
+          <div class="swiper-slide"><a href="">J2C</a></div>
+          <div class="swiper-slide"><a href="">J2D</a></div>
+          <div class="swiper-slide"><a href="">J2E</a></div>
+          <div class="swiper-slide"><a href="">J3A</a></div>
+          <div class="swiper-slide"><a href="">J3B</a></div>
+          <div class="swiper-slide"><a href="">J3C</a></div>
+          <div class="swiper-slide"><a href="">J3D</a></div>
+          <div class="swiper-slide"><a href="">J3E</a></div>
+          <div class="swiper-slide"><a href="">S1A</a></div>
+          <div class="swiper-slide"><a href="">S1B</a></div>
+          <div class="swiper-slide"><a href="">S1C</a></div>
+          <div class="swiper-slide"><a href="">S1D</a></div>
+          <div class="swiper-slide"><a href="">S1E</a></div>
+          <div class="swiper-slide"><a href="">S2A</a></div>
+          <div class="swiper-slide"><a href="">S2B</a></div>
+          <div class="swiper-slide"><a href="">S2C</a></div>
+          <div class="swiper-slide"><a href="">S2D</a></div>
+          <div class="swiper-slide"><a href="">S2E</a></div>
         </div>
         <div class="swiper-pagination"></div>
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-        <script>
-          const swiper = new Swiper('.swiper-container', {
-            loop: true,
-            autoplay: {
-              delay: 3000,
-              disableOnInteraction: false,
-            },
-            pagination: {
-              el: '.swiper-pagination',
-              clickable: true,
-            },
-          });
-        </script>
-  </section>
+        <h2>部活・有志企画</h2>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide"><a href="">写真部</a></div>
+            <div class="swiper-slide"><a href="">英語部</a></div>
+            <div class="swiper-slide"><a href="">理科部天文班</a></div>
+            <div class="swiper-slide"><a href="">理科部生物班</a></div>
+            <div class="swiper-slide"><a href="">理科部地質班</a></div>
+            <div class="swiper-slide"><a href="">将棋部</a></div>
+            <div class="swiper-slide"><a href="">奇術部</a></div>
+            <div class="swiper-slide"><a href="">ブラスバンド部</a></div>
+            <div class="swiper-slide"><a href="">美術同好会</a></div>
+            <div class="swiper-slide"><a href="">歴史研究同好会</a></div>
+            <div class="swiper-slide"><a href="">演劇同好会</a></div>
+            <div class="swiper-slide"><a href="">パソコン同好会</a></div>
+            <div class="swiper-slide"><a href="">アマチュア無線同好会</a></div>
+            <div class="swiper-slide"><a href=""></a></div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+          <!-- <script>
+            const swiper = new Swiper('.swiper-container', {
+              loop: true,
+              autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+              },
+              pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+              },
+            });
+          </script> -->
+    </section>
 
-  <section class="goods">
-    <h2>物販</h2>
-    <p>null</p>
-  </section>
+    <section class="goods">
+      <h2>物販</h2>
+      <p>null</p>
+    </section>
 
-  <section class="access">
-    <div class="contents">
-      <div class="text">
-        <h2>アクセス</h2>
-        <h3>所在地</h3>
-        <p>〒466-0838 愛知県名古屋市昭和区五軒家町6</p>
-        <p>地下鉄鶴舞線「いりなか」駅下車徒歩5分</p>
+    <section class="access">
+      <div class="contents">
+        <div class="text">
+          <h2>アクセス</h2>
+          <h3>所在地</h3>
+          <p>〒466-0838 愛知県名古屋市昭和区五軒家町6</p>
+          <p>地下鉄鶴舞線「いりなか」駅下車徒歩5分</p>
+        </div>
+        <div class="map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1371.723983478034!2d136.95319175561136!3d35.1434544905055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60037a8dfe903e5f%3A0x4bcfca66fd25a03!2z5Y2X5bGx6auY562J5a2m5qCh44O75Lit5a2m5qChIOeUt-WtkOmDqA!5e0!3m2!1sja!2sjp!4v1746446793275!5m2!1sja!2sjp"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
       </div>
-      <div class="map">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1371.723983478034!2d136.95319175561136!3d35.1434544905055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60037a8dfe903e5f%3A0x4bcfca66fd25a03!2z5Y2X5bGx6auY562J5a2m5qCh44O75Lit5a2m5qChIOeUt-WtkOmDqA!5e0!3m2!1sja!2sjp!4v1746446793275!5m2!1sja!2sjp"
-          width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </div>
-  </section>
-</body>
+    </section>
+  </body>
 
 </html>
