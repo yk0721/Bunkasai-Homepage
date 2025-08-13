@@ -8,8 +8,19 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
     <style>
-        #header {
-            z-index: 100;
+        body{
+            width: 100vw;
+        }
+        .header {
+            z-index: 999;
+            padding:5px 0px 5px 0px !important;
+            font-size: 18px
+        }
+        @media screen and (max-width: 860px) {
+            .header{
+                padding: 15px 0px 15px 0px !important;
+                font-size: 16px;
+            }
         }
         body {
             margin: 0;
