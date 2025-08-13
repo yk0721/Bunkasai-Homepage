@@ -1,0 +1,178 @@
+<html>
+<meta charset="UTF-8">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>飛翔祭 2025</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow:hidden;
+            font-family: "Mochiy Pop One", sans-serif;
+            line-height: 1;
+        }
+        .pcback_img {
+            width:auto;
+            height:100%;
+            position:relative;
+            top:0px;left:0px;
+            backdrop-filter: blur(40px);
+            mask-image:
+                linear-gradient(to top, rgb(0 0 0 / 100%) 100%, rgb(0 0 0 / 0%) 100%),
+                linear-gradient(to bottom, rgb(0 0 0 / 100%) 100%, rgb(0 0 0 / 0%) 100%),
+                linear-gradient(to left, rgb(0 0 0 / 100%) 100%, rgb(0 0 0 / 0%) 100%),
+                linear-gradient(to right, rgb(0 0 0 / 100%) 25%, rgb(0 0 0 / 0%) 45%);
+            mask-composite: intersect;
+            z-index:-1;
+        }
+        .countdown-timer{
+            display: inline-flex;
+            text-align: center;
+        }
+        @media screen and (min-width: 861px) {
+        div.back-resize img.pcback_img {
+            display: block;
+        }
+        div.back-resize img.spback_img {
+            display: none;
+        }
+        .image_overlay{
+            position:absolute;
+            top:0px;right:0px;
+            height: 100%;
+            width: 50%;
+            align-content: top;
+            text-align: center;
+            font-size:40px;
+        }
+        .items{
+            position: relative;
+            top: 50%;right:0;
+        }
+        .logo_image{
+            width:auto;
+            height:50%;
+        }
+    }
+        @media screen and (max-width: 860px) {
+        div.back-resize img.spback_img {
+            position: relative;
+            width: 100vw;
+            z-index: 1;
+            filter: blur(5px);
+        }
+        div.back-resize img.pcback_img {
+            display: none;
+        }
+         .image_overlay{
+            top:0;
+            position: fixed;
+            width: 100%;
+            align-content: top;
+            text-align: center;
+            font-size: 30px;
+            z-index: 10;
+        }
+        .items::before, .countdown-timer::before, .countdown-title::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: skyblue;
+            filter: blur(5px);
+            z-index: -2;
+        }
+         .logo_image{
+            width: auto;
+            height: 60%;
+            text-align: center;
+        }
+        .items {
+            position: relative;
+            display: inline-block;
+        }
+        .countdown-title {
+            position: relative;
+            display: inline-block;
+            text-align: center;
+        }
+        .countdown-timer {
+            position: relative;
+            display: inline-flex;
+        }
+        }
+    </style>
+</head>
+<body>
+<div class="image_container">
+   <div class="back-resize"> 
+    <img src="./img/S__11378705.jpg" class="pcback_img">
+    <img src="./img/92316_0.jpg" class="spback_img">
+    <div class="image_overlay">
+        <div class="logo_container">
+        <img src="./img/logo.png" class="logo_image">
+        <div class="items">
+            2025
+        </div>
+        <br>
+        <div class="items">
+            in  南山高等学校・中学校男子部
+        </div>
+        </div>
+            <h2 class="countdown-title">開催まであと</h2><br>
+            <div class="countdown-timer">
+                <div class="time-block">
+                    <span id="days">00</span>
+                    <span class="label">日</span>
+                </div>
+                <div class="time-block">
+                    <span id="hours">00</span>
+                    <span class="label">時間</span>
+                </div>
+                <div class="time-block">
+                    <span id="minutes">00</span>
+                    <span class="label">分</span>
+                </div>
+                <div class="time-block">
+                    <span id="seconds">00</span>
+                    <span class="label">秒</span>
+                </div>
+                <script>
+                    function updateCountdown() {
+                        // 飛翔祭開始まで
+                        const eventDate = new Date('2025-09-20T09:00:00');
+                        const now = new Date();
+                        const diff = eventDate - now;
+                        if (diff > 0) {
+                            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+                            document.getElementById('days').textContent = days.toString().padStart(2, '0');
+                            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+                            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+                            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+                        } else {
+                            // 開始後
+                            document.getElementById('days').textContent = '00';
+                            document.getElementById('hours').textContent = '00';
+                            document.getElementById('minutes').textContent = '00';
+                            document.getElementById('seconds').textContent = '00';
+
+                            document.querySelector('.countdown-title').textContent = '飛翔祭開催中！';
+                        }
+                    }
+
+                    setInterval(updateCountdown, 1000);
+                </script>
+            </div>
+        </div>
+
+</div>
+</body>
+</html>
