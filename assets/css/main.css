@@ -135,6 +135,7 @@ body {
 /* 校長挨拶 */
 .overview {
   height: 100vh;
+  background-color:beige;
 }
 
 .overview_greet-container{
@@ -145,5 +146,6 @@ body {
 .overview_greet-principal{
   font-size: xx-large;
   text-align: center;
+  border-bottom: 2px solid black;
   
 }
