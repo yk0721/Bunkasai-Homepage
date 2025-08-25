@@ -1,58 +1,151 @@
-body{
-    padding: 0;
-    margin: 0;
+body {
+  width: 100vw;
 }
-
 .header {
-  position: fixed;
-    top: 0;
-    left: 0;
-  background-color: yellow;
-    width: 100%;
-    height: 50px;
+  z-index: 999;
+  padding: 5px 0px 5px 0px !important;
+  font-size: 18px;
 }
-
-.header-container{
-    position: absolute;
-    top: 25px;
-    transform: translate(0,-50%);
-    display: flex;
-    justify-content: space-around;
-.contents {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2vw;
-}
-h2 {
-  padding: 0.25em 0.5em;
-  background: transparent;
-  border-left: solid 5px;
-}
-.text, .map {
-  flex: 1;
-}
-.text p {
-  font-size: 2rem;
-}
-.map iframe {
-  width: 100%;
-  height: 100%;
-  min-height: 50vh;
-}
-@media (max-width: 768px) {
-  .contents {
-    flex-direction: column;
-    align-items: stretch;
+@media screen and (max-width: 861px) {
+  .header {
+    padding: 15px 0px 15px 0px !important;
+    font-size: 16px;
   }
-
-  .text, .map {
-    width: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Mochiy Pop One", sans-serif;
+  line-height: 1.6;
+}
+.pcback_img {
+  width: auto;
+  height: 100%;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  backdrop-filter: blur(40px);
+  mask-image: linear-gradient(
+      to top,
+      rgb(0 0 0 / 100%) 100%,
+      rgb(0 0 0 / 0%) 100%
+    ),
+    linear-gradient(to bottom, rgb(0 0 0 / 100%) 100%, rgb(0 0 0 / 0%) 100%),
+    linear-gradient(to left, rgb(0 0 0 / 100%) 100%, rgb(0 0 0 / 0%) 100%),
+    linear-gradient(to right, rgb(0 0 0 / 100%) 25%, rgb(0 0 0 / 0%) 45%);
+  mask-composite: intersect;
+  z-index: -1;
+}
+.countdown-timer {
+  display: inline-flex;
+  text-align: center;
+}
+@media screen and (min-width: 861px) {
+  div.back-resize img.pcback_img {
+    display: block;
+  }
+  div.back-resize img.spback_img {
+    display: none;
+  }
+  .image_overlay {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 50%;
+    align-content: top;
+    text-align: center;
+    font-size: 40px;
+  }
+  .items {
+    position: relative;
+    top: 50%;
+    right: 0;
+  }
+  .logo_image {
+    width: auto;
+    height: 50%;
+    z-index: 5;
+  }
+}
+@media screen and (max-width: 860px) {
+  div.back-resize img.spback_img {
+    position: relative;
+    width: 100vw;
+    z-index: 1;
+    filter: blur(5px);
     height: 100%;
   }
+  div.back-resize img.pcback_img {
+    display: none;
+  }
+  .image_overlay {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    align-content: top;
+    text-align: center;
+    font-size: 30px;
+    z-index: 10;
+  }
+  .items::before,
+  .countdown-timer::before,
+  .countdown-title::before,
+  .logo_image::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: skyblue;
+    filter: blur(5px);
+    z-index: -2;
+  }
+  .logo_container {
+    position: relative;
+    padding-top: 30vh;
+    text-align: center;
+  }
+
+  .logo_image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    max-width: 100%;
+  }
+
+  .items {
+    position: relative;
+    display: inline-block;
+  }
+  .countdown-title {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+  }
+  .countdown-timer {
+    position: relative;
+    display: inline-flex;
+  }
 }
-.header-box{
-    display: flex;
-    justify-content: space-between;
+
+
+
+/* 校長挨拶 */
+.overview {
+  height: 100vh;
+  background-color:beige;
+}
+
+.overview_greet-container{
+  display:flex;
+  align-items: center;
+}
+
+.overview_greet-principal{
+  font-size: xx-large;
+  text-align: center;
+  border-bottom: 2px solid black;
+  
 }
