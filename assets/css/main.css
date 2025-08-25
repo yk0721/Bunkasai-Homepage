@@ -109,6 +109,8 @@ body {
   display: inline-flex;
   text-align: center;
 }
+/* anchor for overlay positioning */
+.back-resize { position: relative; }
 @media screen and (min-width: 861px) {
   div.back-resize img.pcback_img {
     display: block;
@@ -143,14 +145,15 @@ body {
     width: 100vw;
     z-index: 1;
     filter: blur(5px);
-    height: 100%;
+  height: auto; /* allow shrink on small screens */
   }
   div.back-resize img.pcback_img {
     display: none;
   }
   .image_overlay {
-    top: 0;
-    position: fixed;
+  top: 0;
+  position: absolute;
+  left: 0;
     width: 100%;
     align-content: top;
     text-align: center;
@@ -180,8 +183,9 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 100%;
-    max-width: 100%;
+  width: clamp(160px, 60vw, 440px);
+  height: auto; /* keep aspect & allow shrink */
+  max-width: 100%;
   }
 
   .items {
@@ -199,11 +203,14 @@ body {
   }
 }
 
+/* ensure top hero section is not sticky/fixed */
+.top-img { position: static; }
+
 
 
 /* 校長挨拶 */
 .overview {
-  height: 100vh;
+  min-height: 100vh;
   background-color:white;
 }
 
@@ -240,6 +247,13 @@ width: 100%;
     background: linear-gradient(45deg, rgb(89, 178, 230) 0%, rgba(0, 107, 119, 1) 100%);
 }
 
+@media (max-width: 600px) {
+  .overview { min-height: auto; }
+  .overview_greet-container { padding: 40px 16px; line-height: 1.8; }
+  .overview_greet-photo img { height: auto; max-height: 320px; width: auto; }
+  .ttl { padding: 56px 0; }
+}
+
 /* ==========================
    Modernized additions
    ========================== */
@@ -249,7 +263,8 @@ width: 100%;
   align-items: center;
   justify-content: center;
   gap: 24px;
-  margin: var(--space-12) auto;
+  /* bottom margin reduced to ~half */
+  margin: var(--space-6) auto var(--space-6);
   font-family: "Mochiy Pop One", "Noto Sans JP", sans-serif;
   letter-spacing: 0.04em;
 }
@@ -326,8 +341,11 @@ width: 100%;
 }
 
 /* Swiper (cards/pills) */
-.swiper-container { width: 100%; padding: 24px 0 48px; }
-.swiper-wrapper { align-items: stretch; }
+/* Ensure container does not expand page width on mobile */
+.swiper-container { width: 100%; max-width: 100%; padding: 24px 0 48px; overflow: hidden; box-sizing: border-box; }
+/* Swiper 既定CSSでは .swiper に overflow: hidden; が入るが、
+  本実装は .swiper-container を使っているため明示的に対応 */
+.swiper-wrapper { display: flex; align-items: stretch; }
 .swiper-slide {
   width: auto;
   min-width: 120px;
@@ -342,6 +360,12 @@ width: 100%;
 .swiper-slide a { color: inherit; font-weight: 600; letter-spacing: .04em; }
 .swiper-pagination-bullet { background: var(--color-text-muted); opacity: .5; }
 .swiper-pagination-bullet-active { background: var(--color-primary); opacity: 1; }
+
+/* Mobile tuning for Swiper */
+@media (max-width: 600px) {
+  .swiper-container { padding: 16px 0 36px; }
+  .swiper-slide { min-width: 96px; padding: 10px 14px; margin: 6px; }
+}
 
 /* Access (moved from inline) */
 .access { padding: 64px 20px; background: color-mix(in srgb, var(--color-surface) 94%, transparent); }
