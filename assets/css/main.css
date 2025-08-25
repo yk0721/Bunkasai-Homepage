@@ -394,3 +394,22 @@ width: 100%;
   .access .text h2 { font-size: 24px; }
   .access .map .map-embed { aspect-ratio: 16 / 10; }
 }
+
+/* --- 追加: ナビのアクティブ表示 --- */
+a.is-active {
+  text-decoration: underline;
+}
+
+/* --- 追加: 汎用ページセクション余白 --- */
+.page-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(24px, 4vw, 48px) 16px;
+}
+
+/* --- 追加: Jページのリード文 --- */
+.j-page .lead {
+  font-size: clamp(16px, 2vw, 18px);
+  line-height: 1.8;
+  opacity: 0.9;
+}

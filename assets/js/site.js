@@ -50,4 +50,46 @@ document.addEventListener('DOMContentLoaded', () => {
 
   updateCountdown();
   setInterval(updateCountdown, 1000);
+
+  // --- Swiper 自動初期化（存在時のみ、未初期化要素のみ） ---
+  if (window.Swiper) {
+    document.querySelectorAll('.class-swiper').forEach(el => {
+      if (el.swiper) return;
+      new Swiper(el, {
+        slidesPerView: 'auto',
+        spaceBetween: 30,
+        centeredSlides: true,
+        loop: true,
+        autoplay: { delay: 3000, disableOnInteraction: false },
+        pagination: { el: el.querySelector('.swiper-pagination'), clickable: true }
+      });
+    });
+
+    document.querySelectorAll('.club-swiper').forEach(el => {
+      if (el.swiper) return;
+      new Swiper(el, {
+        slidesPerView: 'auto',
+        spaceBetween: 30,
+        centeredSlides: true,
+        loop: true,
+        autoplay: { delay: 3500, disableOnInteraction: false },
+        pagination: { el: el.querySelector('.swiper-pagination'), clickable: true }
+      });
+    });
+  }
+
+  // --- ナビのアクティブ表示 ---
+  try {
+    const current = new URL(location.href);
+    const norm = p => p.replace(/\/index\.html?$/i, '/').toLowerCase();
+    const curPath = norm(current.pathname);
+    document.querySelectorAll('a[href]').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!href || /^https?:\/\//i.test(href) || href.startsWith('mailto:') || href.startsWith('#')) return;
+      const targetPath = norm(new URL(href, current.origin).pathname);
+      if (targetPath === curPath) a.classList.add('is-active');
+    });
+  } catch (e) {
+    // no-op
+  }
 });
