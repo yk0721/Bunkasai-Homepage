@@ -1,16 +1,16 @@
 <html>
- <meta charset="UTF-8">
-  <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-     a {
-     text-decoration: none;
-     color: #333;
-     }
+<meta charset="UTF-8">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    a {
+        text-decoration: none;
+        color: #333;
+    }
 
     .header {
         background: color-mix(in srgb, var(--color-surface, #ffffff) 88%, transparent);
@@ -67,12 +67,12 @@
         align-items: center;
     }
 
-    .main-nav > li {
+    .main-nav>li {
         margin: 0 0.5rem;
         position: relative;
     }
 
-    .main-nav > li > a {
+    .main-nav>li>a {
         display: block;
         color: var(--color-text, #333);
         text-decoration: none;
@@ -81,8 +81,8 @@
         transition: background-color 0.2s ease, color 0.2s ease;
     }
 
-    .main-nav > li > a:hover {
-        background-color: rgba(255,255,255,0.08);
+    .main-nav>li>a:hover {
+        background-color: rgba(255, 255, 255, 0.08);
     }
 
     .dropdown-toggle {
@@ -100,7 +100,7 @@
         transform: translateY(-10px);
         transition: all 0.3s ease;
         list-style: none;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         border: 1px solid #ddd;
         display: none;
     }
@@ -123,12 +123,13 @@
     }
 
     @media (min-width: 769px) {
-        .main-nav > li:hover .dropdown {
+        .main-nav>li:hover .dropdown {
             opacity: 1;
             visibility: visible;
             transform: translateY(0);
             display: block;
         }
+
         .main-nav {
             z-index: 1000;
         }
@@ -159,7 +160,7 @@
             z-index: 1100;
         }
 
-        #menu-toggle:checked ~ .main-nav {
+        #menu-toggle:checked~.main-nav {
             opacity: 1;
             visibility: visible;
             transform: translateX(0);
@@ -168,30 +169,30 @@
             overflow-y: auto;
         }
 
-        #menu-toggle:checked ~ .menu-toggle-label .hamburger span:nth-child(1) {
+        #menu-toggle:checked~.menu-toggle-label .hamburger span:nth-child(1) {
             transform: rotate(45deg) translate(5px, 5px);
         }
 
-        #menu-toggle:checked ~ .menu-toggle-label .hamburger span:nth-child(2) {
+        #menu-toggle:checked~.menu-toggle-label .hamburger span:nth-child(2) {
             opacity: 0;
         }
 
-        #menu-toggle:checked ~ .menu-toggle-label .hamburger span:nth-child(3) {
+        #menu-toggle:checked~.menu-toggle-label .hamburger span:nth-child(3) {
             transform: rotate(-45deg) translate(7px, -6px);
         }
 
-        #menu-toggle:checked ~ .menu-toggle-label {
+        #menu-toggle:checked~.menu-toggle-label {
             position: fixed;
             top: 1rem;
             right: 1rem;
         }
 
-        .main-nav > li {
+        .main-nav>li {
             width: 100%;
             margin: 1rem 0;
         }
 
-        .main-nav > li > a {
+        .main-nav>li>a {
             font-size: 2rem;
             font-weight: bold;
             padding: 1rem 0;
@@ -214,12 +215,13 @@
             border: none;
             display: none;
         }
-        .dropdown-toggle:checked ~ .dropdown {
+
+        .dropdown-toggle:checked~.dropdown {
             max-height: 300px;
             display: block;
         }
 
-        .has-dropdown > label {
+        .has-dropdown>label {
             display: block;
             color: #333;
             font-size: 2rem;
@@ -231,14 +233,14 @@
             position: relative;
         }
 
-        .has-dropdown > label::after {
+        .has-dropdown>label::after {
             content: ' ▼';
             float: right;
             font-size: 1rem;
             transition: transform 0.3s ease;
         }
 
-        .dropdown-toggle:checked ~ label::after {
+        .dropdown-toggle:checked~label::after {
             transform: rotate(180deg);
         }
 
@@ -263,49 +265,52 @@
     }
 </style>
 </head>
+
 <body>
     <header class="header">
         <div class="nav-container">
             <div class="logo">
-                <a href="https://nz-hishosai.com"><p>飛翔祭2025</p></a>
+                <a href="https://nz-hishosai.com">
+                    <p>飛翔祭2025</p>
+                </a>
             </div>
-        <input type="checkbox" id="menu-toggle">
-        <label for="menu-toggle" class="menu-toggle-label">
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </label>
+            <input type="checkbox" id="menu-toggle">
+            <label for="menu-toggle" class="menu-toggle-label">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </label>
 
-        <ul class="main-nav">
-            <li><a href="https://nz-hishosai.com">トップ</a></li>
-            
-            <li class="has-dropdown">
-                <input type="checkbox" id="dropdown-toggle-1" class="dropdown-toggle">
-                <label for="dropdown-toggle-1">教室展示</label>
-                <a href="" style="display: none;">教室展示</a>
-                <ul class="dropdown">
-                    <li><a href="/exhib/J.html">中学展示</a></li>
-                    <li><a href="">高校展示</a></li>
-                    <li><a href="">部活展示</a></li>
-                    <li><a href="">有志展示</a></li>
-                </ul>
-            </li>
-            
-            <li class="has-dropdown">
-                <input type="checkbox" id="dropdown-toggle-2" class="dropdown-toggle">
-                <label for="dropdown-toggle-2">舞台・演奏</label>
-                <a href="" style="display: none;">舞台・演奏</a>
-                <ul class="dropdown">
-                    <li><a href="">部活舞台企画</a></li>
-                    <li><a href="">講堂企画</a></li>
-                    <li><a href="">地下ステージ企画</a></li>
-                    <li><a href="">Nanzan's Got Talent</a></li>
-                </ul>
-            </li>
-            
-            <li><a href="">模擬店</a></li>
-        </ul>
-    </div>
-</header>
+            <ul class="main-nav">
+                <li><a href="https://nz-hishosai.com">トップ</a></li>
+
+                <li class="has-dropdown">
+                    <input type="checkbox" id="dropdown-toggle-1" class="dropdown-toggle">
+                    <label for="dropdown-toggle-1">教室展示</label>
+                    <a href="" style="display: none;">教室展示</a>
+                    <ul class="dropdown">
+                        <li><a href="/exhib/J.html">中学展示</a></li>
+                        <li><a href="">高校展示</a></li>
+                        <li><a href="">部活展示</a></li>
+                        <li><a href="">有志展示</a></li>
+                    </ul>
+                </li>
+
+                <li class="has-dropdown">
+                    <input type="checkbox" id="dropdown-toggle-2" class="dropdown-toggle">
+                    <label for="dropdown-toggle-2">舞台・演奏</label>
+                    <a href="" style="display: none;">舞台・演奏</a>
+                    <ul class="dropdown">
+                        <li><a href="">部活舞台企画</a></li>
+                        <li><a href="">講堂企画</a></li>
+                        <li><a href="">地下ステージ企画</a></li>
+                        <li><a href="">Nanzan's Got Talent</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="">模擬店</a></li>
+            </ul>
+        </div>
+    </header>
