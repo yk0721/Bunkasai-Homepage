@@ -210,7 +210,7 @@ body {
 .overview_greet-container{
   margin: 0 auto;
   max-width: 1200px;
-  text-align: center;
+  text-align: left;
   line-height: 3;
 }
 
@@ -231,6 +231,7 @@ font-family: 'Oswald', sans-serif;
 
 .overview_greet-photo-alt{
   line-height: 1.5;
+  text-align: center;
 }
 
 .ttl{
