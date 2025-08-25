@@ -1,31 +1,27 @@
-{% load static %}
-<link rel="stylesheet" type="text/css" href="{python manage.py runserver}"/>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="footer_template.css" type="text/css">
-<footer class="footer-wrap">
+<link rel="stylesheet" href="/assets/css/footer_template.css" type="text/css">
+<footer class="footer-wrap" role="contentinfo">
     <div class="footer-content">
         <section class="footer-section">
-            <h2>テンプラ</h2>
-            <ul class="footer-links">
-                <div><a href="https://example.com/sex">仲宗根</a></div>
-                <div><a href="https://example.com/tinko">木下</a></div>
-                <div><a href="https://example.com/manko">中村</a></div>
-            </ul>
+            <h2>サイト情報</h2>
+            <div class="footer-links">
+                <div><a href="/">トップ</a></div>
+                <div><a href="/access.html">アクセス</a></div>
+            </div>
         </section>
         <section class="footer-section">
-            <h2>ソーシャルメディア</h2>
-            <ul class="social-icons">
-                <div><a href="https://example.com/x"><img src="sns_x.svg" alt="X"></a></div>
-                <div><a href="https://example.com/instagram"><img src="sns_instagram.svg" alt="Instagram"></a></div>
-            </ul>
+            <h2>ソーシャル</h2>
+            <div class="social-icons">
+                <div><a aria-label="X" href="#"><img src="/assets/img/logo.png" alt="X" /></a></div>
+                <div><a aria-label="Instagram" href="#"><img src="/assets/img/logo.png" alt="Instagram" /></a></div>
+            </div>
         </section>
         <section class="footer-section">
-            <h2>創価学会</h2>
-            <ul class="social-icons">
-                <div><a href="https://example.com/x"><img src="sns_x.svg" alt="X"></a></div>
-                <div><a href="https://example.com/instagram"><img src="sns_instagram.svg" alt="Instagram"></a></div>
-            </ul>
+            <h2>問い合わせ</h2>
+            <div class="footer-links">
+                <div><a href="mailto:info@example.com">info@example.com</a></div>
+            </div>
         </section>
     </div>
-    <small class="copyright">Copyright © Example. All rights reserved.</small>
+    <small class="copyright">© 2025 Hishosai. All rights reserved.</small>
 </footer>

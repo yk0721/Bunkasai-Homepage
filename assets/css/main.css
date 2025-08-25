@@ -1,22 +1,91 @@
+/* ==========================
+   Modern Base + Design Tokens
+   ========================== */
+:root {
+  /* brand */
+  --color-primary: #3a7cff;
+  --color-primary-600: #2e63cc;
+  --color-secondary: #8a7dff;
+  --color-accent: #ff71a7;
+  /* surface */
+  --color-bg: #0b1220;
+  --color-surface: #0f172a; /* slate-900-ish */
+  --color-card: #111827; /* gray-900 */
+  --color-elev: rgba(255,255,255,0.06);
+  /* text */
+  --color-text: #e6eaf2;
+  --color-text-muted: #a9b3c6;
+  /* borders/shadows */
+  --border: 1px solid rgba(255,255,255,0.08);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --shadow-1: 0 6px 18px rgba(0,0,0,0.25);
+  --shadow-2: 0 10px 30px rgba(0,0,0,0.35);
+  /* spacing */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+  --space-16: 64px;
+  --container: 1200px;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-bg: #f7f9fc;
+    --color-surface: #ffffff;
+    --color-card: #ffffff;
+    --color-elev: rgba(0,0,0,0.06);
+    --color-text: #1f2a44;
+    --color-text-muted: #5b6b88;
+    --border: 1px solid rgba(0,0,0,0.08);
+  }
+}
+
+/* Reset (minimal) */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { height: 100%; }
+body, h1, h2, h3, h4, p, ul, ol { margin: 0; }
+ul, ol { padding-left: 1.2rem; }
+img, video { max-width: 100%; height: auto; display: block; }
+button, input, select, textarea { font: inherit; }
+
+/* Base */
 body {
   width: 100vw;
+  overflow-x: hidden;
+  background: var(--color-bg);
+  color: var(--color-text);
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans JP", system-ui, -apple-system, Segoe UI, Roboto, "Hiragino Kaku Gothic ProN", "Mochiy Pop One", sans-serif;
+  line-height: 1.7;
 }
+
+.container {
+  width: min(100% - 32px, var(--container));
+  margin-inline: auto;
+}
+
+/* Sticky translucent header (also used by template/header.html) */
 .header {
-  z-index: 999;
-  padding: 5px 0px 5px 0px !important;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  backdrop-filter: saturate(120%) blur(10px);
+  background: color-mix(in srgb, var(--color-surface) 88%, transparent);
+  border-bottom: var(--border);
+  padding: 10px 0;
   font-size: 18px;
 }
 @media screen and (max-width: 861px) {
-  .header {
-    padding: 15px 0px 15px 0px !important;
-    font-size: 16px;
-  }
-}
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Mochiy Pop One", sans-serif;
-  line-height: 1.6;
+  .header { padding: 14px 0; font-size: 16px; }
 }
 .pcback_img {
   width: auto;
@@ -135,17 +204,193 @@ body {
 /* 校長挨拶 */
 .overview {
   height: 100vh;
-  background-color:beige;
+  background-color:white;
 }
 
 .overview_greet-container{
-  display:flex;
-  align-items: center;
+  margin: 0 auto;
+  max-width: 1200px;
+  text-align: center;
+  line-height: 3;
 }
 
 .overview_greet-principal{
-  font-size: xx-large;
-  text-align: center;
-  border-bottom: 2px solid black;
-  
+font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    color: #fff;
+    font-size: 50px;
+    text-align: center;
+    letter-spacing: 0.03em;
+    line-height: 1em;
+    margin-bottom: 0;
+}
+
+.overview_greet-photo img{
+  height: 500px;
+}
+
+.overview_greet-photo-alt{
+  line-height: 1.5;
+}
+
+.ttl{
+width: 100%;
+    padding: 100px 0;
+    background: rgb(89, 178, 230);
+    background: linear-gradient(45deg, rgb(89, 178, 230) 0%, rgba(0, 107, 119, 1) 100%);
+}
+
+/* ==========================
+   Modernized additions
+   ========================== */
+/* Headings */
+.stylish-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  margin: var(--space-12) auto;
+  font-family: "Mochiy Pop One", "Noto Sans JP", sans-serif;
+  letter-spacing: 0.04em;
+}
+.stylish-heading .heading-text {
+  font-size: clamp(22px, 3vw, 32px);
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-accent));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.heading-line { position: relative; flex: 1; height: 1px; opacity: .7; }
+.heading-line::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #6aa2ff, #8a7dff, #ff71a7);
+  border-radius: 999px;
+  transform: translateY(-50%);
+}
+.heading-line.left::before { right: 0; }
+.heading-line.right::before { left: 0; }
+
+/* Countdown blocks */
+.countdown-title { font-size: clamp(18px, 2.5vw, 24px); color: var(--color-text-muted); }
+.time-block {
+  display: grid;
+  place-items: center;
+  min-width: 64px;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
+  border: var(--border);
+  box-shadow: var(--shadow-1);
+}
+.time-block > span:first-child { font-size: 28px; font-weight: 700; }
+.time-block .label { font-size: 12px; color: var(--color-text-muted); }
+
+/* Overview tuning */
+.overview {
+  min-height: 100vh;
+  background: var(--color-surface);
+  border-top: var(--border);
+}
+.overview_greet-container{
+  max-width: var(--container);
+  line-height: 2;
+  padding: var(--space-10) var(--space-6) var(--space-16);
+}
+.overview_greet-principal{
+  font-weight: 600;
+  color: var(--color-text);
+  font-size: clamp(28px, 4vw, 50px);
+  line-height: 1.2;
+  margin-bottom: var(--space-6);
+}
+.overview_greet-photo img{
+  height: clamp(260px, 40vw, 500px);
+  border-radius: var(--radius-lg);
+  border: var(--border);
+  box-shadow: var(--shadow-1);
+  margin: 0 auto; /* 中央揃え */
+}
+.overview_greet-photo-alt{
+  line-height: 1.7;
+  color: var(--color-text-muted);
+  margin-top: var(--space-3);
+}
+.overview_greet .overview_greet-text p { line-height: 2.5; }
+.ttl{
+  padding: 80px 0;
+  border-top: var(--border);
+}
+
+/* Swiper (cards/pills) */
+.swiper-container { width: 100%; padding: 24px 0 48px; }
+.swiper-wrapper { align-items: stretch; }
+.swiper-slide {
+  width: auto;
+  min-width: 120px;
+  padding: 14px 18px;
+  margin: 8px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.04));
+  border: var(--border);
+  color: var(--color-text);
+  box-shadow: var(--shadow-1);
+}
+.swiper-slide a { color: inherit; font-weight: 600; letter-spacing: .04em; }
+.swiper-pagination-bullet { background: var(--color-text-muted); opacity: .5; }
+.swiper-pagination-bullet-active { background: var(--color-primary); opacity: 1; }
+
+/* Access (moved from inline) */
+.access { padding: 64px 20px; background: color-mix(in srgb, var(--color-surface) 94%, transparent); }
+.access .contents {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: stretch;
+  gap: 28px;
+  background: var(--color-card);
+  border-radius: 16px;
+  box-shadow: var(--shadow-1);
+  padding: 28px;
+  border: var(--border);
+}
+.access .text { flex: 1 1 45%; color: var(--color-text); }
+.access .text h2 {
+  font-family: "Mochiy Pop One", system-ui, -apple-system, Segoe UI, Roboto, "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+  font-size: 28px;
+  margin: 0 0 12px;
+  letter-spacing: .04em;
+  position: relative;
+  display: inline-block;
+}
+.access .text h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 6px;
+  background: linear-gradient(90deg, #6aa2ff, #8a7dff, #ff71a7);
+  border-radius: 3px;
+  opacity: .9;
+}
+.access .text h3 { margin: 22px 0 8px; font-size: 18px; color: var(--color-text-muted); }
+.access .text p { margin: 6px 0; line-height: 1.9; color: var(--color-text); opacity: .9; }
+.access .map { flex: 1 1 55%; min-width: 320px; }
+.access .map .map-embed {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.06);
+}
+.access .map iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+@media (max-width: 900px) {
+  .access .contents { flex-direction: column; padding: 20px; gap: 20px; }
+  .access .text h2 { font-size: 24px; }
+  .access .map .map-embed { aspect-ratio: 16 / 10; }
 }

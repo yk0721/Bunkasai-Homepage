@@ -13,11 +13,14 @@
      }
 
     .header {
-        background: white;
-        color: #333;
+        background: color-mix(in srgb, var(--color-surface, #ffffff) 88%, transparent);
+        color: var(--color-text, #333);
         padding: 1rem 0;
-        position: relative;
-        border-bottom: 1px solid #ddd;
+        position: sticky;
+        top: 0;
+        border-bottom: var(--border, 1px solid #ddd);
+        backdrop-filter: saturate(120%) blur(10px);
+        z-index: 1000;
     }
 
     .nav-container {
@@ -71,14 +74,15 @@
 
     .main-nav > li > a {
         display: block;
-        color: #333;
+        color: var(--color-text, #333);
         text-decoration: none;
         padding: 1rem 1.5rem;
-        transition: background-color 0.3s ease;
+        border-radius: 10px;
+        transition: background-color 0.2s ease, color 0.2s ease;
     }
 
     .main-nav > li > a:hover {
-        background-color: #fff;
+        background-color: rgba(255,255,255,0.08);
     }
 
     .dropdown-toggle {
@@ -142,7 +146,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: white;
+            background: color-mix(in srgb, var(--color-surface, #ffffff) 92%, transparent);
             backdrop-filter: blur(10px);
             flex-direction: column;
             justify-content: center;
@@ -200,7 +204,7 @@
             position: static;
             opacity: 1;
             visibility: visible;
-            background: rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.06);
             backdrop-filter: blur(5px);
             transform: none;
             transition: max-height 0.3s ease;
@@ -245,8 +249,8 @@
             font-weight: normal;
             text-transform: none;
             letter-spacing: normal;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-            color: #333;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            color: var(--color-text, #333);
         }
 
         .dropdown li:last-child a {
@@ -254,7 +258,7 @@
         }
 
         .dropdown li a:hover {
-            background: rgba(0, 0, 0, 0.1);
+            background: rgba(255, 255, 255, 0.08);
         }
     }
 </style>
