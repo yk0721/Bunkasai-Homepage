@@ -2,224 +2,231 @@
 
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>飛翔祭2025</title>
   <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
   <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- カウントダウン要素間のスペース -->
+  <style>
+    .countdown-timer .time-block+.time-block {
+      margin-left: 12px;
+    }
+  </style>
 </head>
 
 <body>
   <section class="top-img"></section>
-    <div id="header"></div>
-    <div class="image_container">
+  <div id="header"></div>
+  <div class="image_container">
     <div class="back-resize">
       <img src="./assets/img/S__11378705.jpg" class="pcback_img">
       <img src="./assets/img/92316_0.jpg" class="spback_img">
       <div class="image_overlay">
-      <div class="logo_container">
-        <img src="./assets/img/S__12656674.jpg" class="logo_image">
-        <div class="items">2025</div>
-        <br>
-        <div class="items">in 南山高等学校・中学校男子部</div>
-      </div>
-      <h2 class="countdown-title">開催まであと</h2><br>
-      <div class="countdown-timer">
-        <div class="time-block">
-        <span id="days">00</span>
-        <span class="label">日</span>
+        <div class="logo_container">
+          <img src="./assets/img/無題64_20250825234357.png" class="logo_image">
+          <div class="items">2025</div>
+          <br>
+          <div class="items">in 南山高等学校・中学校男子部</div>
         </div>
-        <div class="time-block">
-        <span id="hours">00</span>
-        <span class="label">時間</span>
+        <h2 class="countdown-title">開催まであと</h2><br>
+        <div class="countdown-timer">
+          <div class="time-block">
+            <span id="days">00</span>
+            <span class="label">日</span>
+          </div>
+          <div class="time-block">
+            <span id="hours">00</span>
+            <span class="label">時間</span>
+          </div>
+          <div class="time-block">
+            <span id="minutes">00</span>
+            <span class="label">分</span>
+          </div>
+          <div class="time-block">
+            <span id="seconds">00</span>
+            <span class="label">秒</span>
+          </div>
         </div>
-        <div class="time-block">
-        <span id="minutes">00</span>
-        <span class="label">分</span>
-        </div>
-        <div class="time-block">
-        <span id="seconds">00</span>
-        <span class="label">秒</span>
-        </div>
-      </div>
       </div>
     </div>
-    </div>
+  </div>
   </section>
-  
+
   <!-- 校長挨拶 -->
   <section class="overview">
     <h2 class="stylish-heading">
-    <span class="heading-line left"></span>
-    <span class="heading-text">校長からのあいさつ</span>
-    <span class="heading-line right"></span>
+      <span class="heading-line left"></span>
+      <span class="heading-text">校長からのあいさつ</span>
+      <span class="heading-line right"></span>
     </h2>
     <div class="overview_greet-container">
-    <div class="overview_greet">
-      <div class="overview_greet-text">
-      <p>南山高等学校・中学校男子部の文化祭「飛翔祭」へのご来場心より感謝申し上げます。</p>
-      <p>今年度のテーマとして掲げている「燎（かがり）」という言葉の通り、情熱を燃やして各々の個性を輝かせると同時に、力を合わせて周りを照らし明るくする、そんな思いを込めて生徒たちが時間をかけて準備をしてきました。
-      </p>
-      <p>
-        今年もクラスや部活動、有志団体の企画・展示やパフォーマンス、模擬店などがありますが、それぞれがどのような明かりをともしてくれるのか、それらすべてが重なったときにどんな輝きをもたらしてくれるのか、私も楽しみにしています。
-      </p>
-      <p>
-        また、そうした明るく照らされた表舞台を見えないところで支えてくれる生徒たちの頑張りや多くの方々のご協力にも感謝したいと思います。まだまだ暑い中ではありますが、ご来場の皆様に生徒たちの熱意が生み出す色とりどりの「燎」を感じていただけますと幸いです。
-      </p>
-      <p>どうぞ私たちと共に熱く輝く時間をお過ごしください。</p>
+      <div class="overview_greet">
+        <div class="overview_greet-text">
+          <p>南山高等学校・中学校男子部の文化祭「飛翔祭」へのご来場心より感謝申し上げます。</p>
+          <p>今年度のテーマとして掲げている「燎（かがり）」という言葉の通り、情熱を燃やして各々の個性を輝かせると同時に、力を合わせて周りを照らし明るくする、そんな思いを込めて生徒たちが時間をかけて準備をしてきました。
+          </p>
+          <p>
+            今年もクラスや部活動、有志団体の企画・展示やパフォーマンス、模擬店などがありますが、それぞれがどのような明かりをともしてくれるのか、それらすべてが重なったときにどんな輝きをもたらしてくれるのか、私も楽しみにしています。
+          </p>
+          <p>
+            また、そうした明るく照らされた表舞台を見えないところで支えてくれる生徒たちの頑張りや多くの方々のご協力にも感謝したいと思います。まだまだ暑い中ではありますが、ご来場の皆様に生徒たちの熱意が生み出す色とりどりの「燎」を感じていただけますと幸いです。
+          </p>
+          <p>どうぞ私たちと共に熱く輝く時間をお過ごしください。</p>
+        </div>
       </div>
-    </div>
-    <div class="overview_greet-photo">
-      <img src="assets/img/akao.png" alt="校長の写真">
-      <div class="overview_greet-photo-alt">
-      南山高等学校・中学校男子部校長<br>赤尾 道夫
+      <div class="overview_greet-photo">
+        <img src="assets/img/akao.png" alt="校長の写真">
+        <div class="overview_greet-photo-alt">
+          南山高等学校・中学校男子部校長<br>赤尾 道夫
+        </div>
       </div>
-    </div>
     </div>
   </section>
 
   <section class="exhib-slider">
     <div class="ttl">
-    <h2 class="stylish-heading">
-      <span class="heading-line left"></span>
-      <span class="heading-text">クラス企画</span>
-      <span class="heading-line right"></span>
-    </h2>
+      <h2 class="stylish-heading">
+        <span class="heading-line left"></span>
+        <span class="heading-text">クラス企画</span>
+        <span class="heading-line right"></span>
+      </h2>
     </div>
     <div class="swiper-container class-swiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><a href="">J2A</a></div>
-      <div class="swiper-slide"><a href="">J2B</a></div>
-      <div class="swiper-slide"><a href="">J2C</a></div>
-      <div class="swiper-slide"><a href="">J2D</a></div>
-      <div class="swiper-slide"><a href="">J2E</a></div>
-      <div class="swiper-slide"><a href="">J3A</a></div>
-      <div class="swiper-slide"><a href="">J3B</a></div>
-      <div class="swiper-slide"><a href="">J3C</a></div>
-      <div class="swiper-slide"><a href="">J3D</a></div>
-      <div class="swiper-slide"><a href="">J3E</a></div>
-      <div class="swiper-slide"><a href="">S1A</a></div>
-      <div class="swiper-slide"><a href="">S1B</a></div>
-      <div class="swiper-slide"><a href="">S1C</a></div>
-      <div class="swiper-slide"><a href="">S1D</a></div>
-      <div class="swiper-slide"><a href="">S1E</a></div>
-      <div class="swiper-slide"><a href="">S2A</a></div>
-      <div class="swiper-slide"><a href="">S2B</a></div>
-      <div class="swiper-slide"><a href="">S2C</a></div>
-      <div class="swiper-slide"><a href="">S2D</a></div>
-      <div class="swiper-slide"><a href="">S2E</a></div>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><a href="">J2A</a></div>
+        <div class="swiper-slide"><a href="">J2B</a></div>
+        <div class="swiper-slide"><a href="">J2C</a></div>
+        <div class="swiper-slide"><a href="">J2D</a></div>
+        <div class="swiper-slide"><a href="">J2E</a></div>
+        <div class="swiper-slide"><a href="">J3A</a></div>
+        <div class="swiper-slide"><a href="">J3B</a></div>
+        <div class="swiper-slide"><a href="">J3C</a></div>
+        <div class="swiper-slide"><a href="">J3D</a></div>
+        <div class="swiper-slide"><a href="">J3E</a></div>
+        <div class="swiper-slide"><a href="">S1A</a></div>
+        <div class="swiper-slide"><a href="">S1B</a></div>
+        <div class="swiper-slide"><a href="">S1C</a></div>
+        <div class="swiper-slide"><a href="">S1D</a></div>
+        <div class="swiper-slide"><a href="">S1E</a></div>
+        <div class="swiper-slide"><a href="">S2A</a></div>
+        <div class="swiper-slide"><a href="">S2B</a></div>
+        <div class="swiper-slide"><a href="">S2C</a></div>
+        <div class="swiper-slide"><a href="">S2D</a></div>
+        <div class="swiper-slide"><a href="">S2E</a></div>
+      </div>
+      <div class="swiper-pagination"></div>
     </div>
-    <div class="swiper-pagination"></div>
-    </div>
-    
+
     <div class="ttl">
-    <h2 class="stylish-heading">
-      <span class="heading-line left"></span>
-      <span class="heading-text">部活・有志企画</span>
-      <span class="heading-line right"></span>
-    </h2>
+      <h2 class="stylish-heading">
+        <span class="heading-line left"></span>
+        <span class="heading-text">部活・有志企画</span>
+        <span class="heading-line right"></span>
+      </h2>
     </div>
     <div class="swiper-container club-swiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><a href="">写真部</a></div>
-      <div class="swiper-slide"><a href="">英語部</a></div>
-      <div class="swiper-slide"><a href="">理科部天文班</a></div>
-      <div class="swiper-slide"><a href="">理科部生物班</a></div>
-      <div class="swiper-slide"><a href="">理科部地質班</a></div>
-      <div class="swiper-slide"><a href="">将棋部</a></div>
-      <div class="swiper-slide"><a href="">奇術部</a></div>
-      <div class="swiper-slide"><a href="">ブラスバンド部</a></div>
-      <div class="swiper-slide"><a href="">美術同好会</a></div>
-  <div class="swiper-slide"><a href="">歴史研究同好会</a></div>
-  <div class="swiper-slide"><a href="">演劇</a></div>
-    </div>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><a href="">写真部</a></div>
+        <div class="swiper-slide"><a href="">英語部</a></div>
+        <div class="swiper-slide"><a href="">理科部天文班</a></div>
+        <div class="swiper-slide"><a href="">理科部生物班</a></div>
+        <div class="swiper-slide"><a href="">理科部地質班</a></div>
+        <div class="swiper-slide"><a href="">将棋部</a></div>
+        <div class="swiper-slide"><a href="">奇術部</a></div>
+        <div class="swiper-slide"><a href="">ブラスバンド部</a></div>
+        <div class="swiper-slide"><a href="">美術同好会</a></div>
+        <div class="swiper-slide"><a href="">歴史研究同好会</a></div>
+        <div class="swiper-slide"><a href="">演劇</a></div>
+      </div>
 
   </section>
 
   <section class="exhib-slider">
     <div class="ttl">
-    <h2>クラス企画</h2>
+      <h2>クラス企画</h2>
     </div>
     <div class="swiper-container class-swiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><a href="">J2A</a></div>
-      <div class="swiper-slide"><a href="">J2B</a></div>
-      <div class="swiper-slide"><a href="">J2C</a></div>
-      <div class="swiper-slide"><a href="">J2D</a></div>
-      <div class="swiper-slide"><a href="">J2E</a></div>
-      <div class="swiper-slide"><a href="">J3A</a></div>
-      <div class="swiper-slide"><a href="">J3B</a></div>
-      <div class="swiper-slide"><a href="">J3C</a></div>
-      <div class="swiper-slide"><a href="">J3D</a></div>
-      <div class="swiper-slide"><a href="">J3E</a></div>
-      <div class="swiper-slide"><a href="">S1A</a></div>
-      <div class="swiper-slide"><a href="">S1B</a></div>
-      <div class="swiper-slide"><a href="">S1C</a></div>
-      <div class="swiper-slide"><a href="">S1D</a></div>
-      <div class="swiper-slide"><a href="">S1E</a></div>
-      <div class="swiper-slide"><a href="">S2A</a></div>
-      <div class="swiper-slide"><a href="">S2B</a></div>
-      <div class="swiper-slide"><a href="">S2C</a></div>
-      <div class="swiper-slide"><a href="">S2D</a></div>
-      <div class="swiper-slide"><a href="">S2E</a></div>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><a href="">J2A</a></div>
+        <div class="swiper-slide"><a href="">J2B</a></div>
+        <div class="swiper-slide"><a href="">J2C</a></div>
+        <div class="swiper-slide"><a href="">J2D</a></div>
+        <div class="swiper-slide"><a href="">J2E</a></div>
+        <div class="swiper-slide"><a href="">J3A</a></div>
+        <div class="swiper-slide"><a href="">J3B</a></div>
+        <div class="swiper-slide"><a href="">J3C</a></div>
+        <div class="swiper-slide"><a href="">J3D</a></div>
+        <div class="swiper-slide"><a href="">J3E</a></div>
+        <div class="swiper-slide"><a href="">S1A</a></div>
+        <div class="swiper-slide"><a href="">S1B</a></div>
+        <div class="swiper-slide"><a href="">S1C</a></div>
+        <div class="swiper-slide"><a href="">S1D</a></div>
+        <div class="swiper-slide"><a href="">S1E</a></div>
+        <div class="swiper-slide"><a href="">S2A</a></div>
+        <div class="swiper-slide"><a href="">S2B</a></div>
+        <div class="swiper-slide"><a href="">S2C</a></div>
+        <div class="swiper-slide"><a href="">S2D</a></div>
+        <div class="swiper-slide"><a href="">S2E</a></div>
+      </div>
+      <div class="swiper-pagination"></div>
     </div>
-    <div class="swiper-pagination"></div>
-    </div>
-    
+
     <div class="ttl">
-    <h2>部活・有志企画</h2>
+      <h2>部活・有志企画</h2>
     </div>
     <div class="swiper-container club-swiper">
-    <div class="swiper-wrapper">
-      <div class="swiper-slide"><a href="">写真部</a></div>
-      <div class="swiper-slide"><a href="">英語部</a></div>
-      <div class="swiper-slide"><a href="">理科部天文班</a></div>
-      <div class="swiper-slide"><a href="">理科部生物班</a></div>
-      <div class="swiper-slide"><a href="">理科部地質班</a></div>
-      <div class="swiper-slide"><a href="">将棋部</a></div>
-      <div class="swiper-slide"><a href="">奇術部</a></div>
-      <div class="swiper-slide"><a href="">ブラスバンド部</a></div>
-      <div class="swiper-slide"><a href="">美術同好会</a></div>
-      <div class="swiper-slide"><a href="">歴史研究同好会</a></div>
-      <div class="swiper-slide"><a href="">演劇同好会</a></div>
-      <div class="swiper-slide"><a href="">パソコン同好会</a></div>
-      <div class="swiper-slide"><a href="">アマチュア無線同好会</a></div>
-    </div>
-    <div class="swiper-pagination"></div>
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><a href="">写真部</a></div>
+        <div class="swiper-slide"><a href="">英語部</a></div>
+        <div class="swiper-slide"><a href="">理科部天文班</a></div>
+        <div class="swiper-slide"><a href="">理科部生物班</a></div>
+        <div class="swiper-slide"><a href="">理科部地質班</a></div>
+        <div class="swiper-slide"><a href="">将棋部</a></div>
+        <div class="swiper-slide"><a href="">奇術部</a></div>
+        <div class="swiper-slide"><a href="">ブラスバンド部</a></div>
+        <div class="swiper-slide"><a href="">美術同好会</a></div>
+        <div class="swiper-slide"><a href="">歴史研究同好会</a></div>
+        <div class="swiper-slide"><a href="">演劇同好会</a></div>
+        <div class="swiper-slide"><a href="">パソコン同好会</a></div>
+        <div class="swiper-slide"><a href="">アマチュア無線同好会</a></div>
+      </div>
+      <div class="swiper-pagination"></div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const classSwiper = new Swiper('.class-swiper', {
-      slidesPerView: 'auto',
-      spaceBetween: 30,
-      centeredSlides: true,
-      loop: true,
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: '.class-swiper .swiper-pagination',
-        clickable: true,
-      },
-      });
+      document.addEventListener('DOMContentLoaded', function () {
+        const classSwiper = new Swiper('.class-swiper', {
+          slidesPerView: 'auto',
+          spaceBetween: 30,
+          centeredSlides: true,
+          loop: true,
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: '.class-swiper .swiper-pagination',
+            clickable: true,
+          },
+        });
 
-      const clubSwiper = new Swiper('.club-swiper', {
-      slidesPerView: 'auto',
-      spaceBetween: 30,
-      centeredSlides: true,
-      loop: true,
-      autoplay: {
-        delay: 3500,
-        disableOnInteraction: false,
-      },
-      pagination: {
-        el: '.club-swiper .swiper-pagination',
-        clickable: true,
-      },
+        const clubSwiper = new Swiper('.club-swiper', {
+          slidesPerView: 'auto',
+          spaceBetween: 30,
+          centeredSlides: true,
+          loop: true,
+          autoplay: {
+            delay: 3500,
+            disableOnInteraction: false,
+          },
+          pagination: {
+            el: '.club-swiper .swiper-pagination',
+            clickable: true,
+          },
+        });
       });
-    });
     </script>
   </section>
 
@@ -230,26 +237,24 @@
 
   <section class="access">
     <div class="contents">
-    <div class="text">
-      <h2>アクセス</h2>
-      <h3>所在地</h3>
-      <p>〒466-0838 愛知県名古屋市昭和区五軒家町6</p>
-      <p>地下鉄鶴舞線「いりなか」駅下車徒歩5分</p>
-    </div>
-    <div class="map">
-      <div class="map-embed">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1371.723983478034!2d136.95319175561136!3d35.1434544905055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60037a8dfe903e5f%3A0x4bcfca66fd25a03!2z5Y2X5bGx6auY562J5a2m5qCh44O75Lit5a2m5qChIOeUt-WtkOmDqA!5e0!3m2!1sja!2sjp!4v1746446793275!5m2!1sja!2sjp"
-        allowfullscreen=""
-        loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <div class="text">
+        <h2>アクセス</h2>
+        <h3>所在地</h3>
+        <p>〒466-0838 愛知県名古屋市昭和区五軒家町6</p>
+        <p>地下鉄鶴舞線「いりなか」駅下車徒歩5分</p>
       </div>
-    </div>
+      <div class="map">
+        <div class="map-embed">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1371.723983478034!2d136.95319175561136!3d35.1434544905055!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60037a8dfe903e5f%3A0x4bcfca66fd25a03!2z5Y2X5bGx6auY562J5a2m5qCh44O75Lit5a2m5qChIOeUt-WtkOmDqA!5e0!3m2!1sja!2sjp!4v1746446793275!5m2!1sja!2sjp"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
     </div>
   </section>
   <div id="footer"></div>
   <script src="assets/js/site.js"></script>
-  
+
 </body>
 
 </html>

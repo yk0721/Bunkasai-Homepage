@@ -1,56 +1,70 @@
 /* Footer Modern Styles (uses CSS variables from main.css if available) */
 .footer-wrap {
-    background: color-mix(in srgb, var(--color-surface, #0f172a) 92%, transparent);
-    color: var(--color-text, #e6eaf2);
-    border-top: var(--border, 1px solid rgba(255,255,255,0.08));
-    padding: 32px 16px;
+  background: color-mix(
+    in srgb,
+    var(--color-surface, #0f172a) 92%,
+    transparent
+  );
+  color: var(--color-text, #e6eaf2);
+  border-top: var(--border, 1px solid rgba(255, 255, 255, 0.08));
+  padding: 32px 16px;
 }
 
 .footer-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 24px;
-    max-width: 1200px;
-    margin: 0 auto;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
 }
 
 .footer-section {
-    flex: 1 1 260px;
-    min-width: 220px; /* レイアウト崩れ防止 */
+  flex: 1 1 260px;
+  min-width: 220px; /* レイアウト崩れ防止 */
 }
 
 .footer-section h2 {
-    font-size: 16px;
-    letter-spacing: .06em;
-    margin: 0 0 10px;
-    color: var(--color-text, #e6eaf2);
-    opacity: .9;
+  font-size: 16px;
+  letter-spacing: 0.06em;
+  margin: 0 0 10px;
+  color: var(--color-text, #e6eaf2);
+  opacity: 0.9;
 }
 
 .footer-links,
 .social-icons {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.footer-links a { color: inherit; text-decoration: none; opacity: .9; }
-.footer-links a:hover { opacity: 1; text-decoration: underline; }
+.footer-links a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.9;
+}
+.footer-links a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
 
-.social-icons { flex-direction: row; gap: 12px; }
+.social-icons {
+  flex-direction: row;
+  gap: 12px;
+}
 .social-icons img {
-    width: 28px;
-    height: 28px;
-    display: block;
-    filter: grayscale(10%);
+  width: 28px;
+  height: 28px;
+  display: block;
+  filter: grayscale(10%);
 }
 
 .copyright {
-    display: block;
-    text-align: center;
-    margin-top: 24px;
-    color: var(--color-text, #e6eaf2);
-    opacity: .6;
+  display: block;
+  text-align: center;
+  margin-top: 24px;
+  color: var(--color-text, #e6eaf2);
+  opacity: 0.6;
 }
