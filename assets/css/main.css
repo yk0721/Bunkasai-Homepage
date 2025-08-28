@@ -254,6 +254,37 @@ width: 100%;
   .ttl { padding: 56px 0; }
 }
 
+/* Swiper */
+.swiper-slide {
+  height: 60% !important;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+.swiper-slide .exhib-card {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 25px;
+    }
+
+.swiper-slide .exhib-card img.map {
+      width: 40%;
+      height: auto;
+      border-radius: 12px;
+    }
+
+.swiper-slide .exhib-card .title, .group {
+      font-size: 24px;
+      line-height: 1;
+    }
+
+.swiper-slide a {
+  text-decoration: none;
+}
+
 /* ==========================
    Modernized additions
    ========================== */
