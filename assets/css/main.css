@@ -241,18 +241,13 @@ font-family: 'Oswald', sans-serif;
   text-align: center;
 }
 
-.ttl{
-width: 100%;
-    padding: 100px 0;
-    background: rgb(89, 178, 230);
-    background: linear-gradient(45deg, rgb(89, 178, 230) 0%, rgba(0, 107, 119, 1) 100%);
-}
+/* .ttl wrapper removed */
 
 @media (max-width: 600px) {
   .overview { min-height: auto; }
   .overview_greet-container { padding: 40px 16px; line-height: 1.8; }
   .overview_greet-photo img { height: auto; max-height: 320px; width: auto; }
-  .ttl { padding: 56px 0; }
+  /* .ttl removed */
 }
 
 /* ==========================
@@ -336,10 +331,7 @@ width: 100%;
   margin-top: var(--space-3);
 }
 .overview_greet .overview_greet-text p { line-height: 2.5; }
-.ttl{
-  padding: 80px 0;
-  border-top: var(--border);
-}
+/* .ttl removed */
 
 /* Swiper (cards) */
 /* Ensure container does not expand page width on mobile */
