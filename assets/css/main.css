@@ -3,10 +3,10 @@
    ========================== */
 :root {
   /* brand */
-  --color-primary: #3a7cff;
-  --color-primary-600: #2e63cc;
-  --color-secondary: #8a7dff;
-  --color-accent: #ff71a7;
+  --color-primary: #ffffff;
+  --color-primary-600: #ffffff;
+  --color-secondary: #ffffff;
+  --color-accent: #ffffff;
   /* surface */
   --color-bg: #0b1220;
   --color-surface: #0f172a; /* slate-900-ish */
@@ -251,34 +251,125 @@ font-family: 'Oswald', sans-serif;
 }
 
 /* Swiper */
+/* Ensure container does not expand page width on mobile */
+.swiper-container {
+  width: 100%;
+  max-width: 100%;
+  padding: 24px 0 48px;
+  overflow: hidden;
+  box-sizing: border-box;
+  position: relative;
+  height: 550px;
+}
+
+/* Wrapper transparent background */
+.swiper-wrapper {
+  background: transparent;
+  display: flex;
+  align-items: stretch;
+  height: 450px;
+}
+
+/* Common slide styles */
 .swiper-slide {
-  height: 60% !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  color: var(--color-text);
+  display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   box-sizing: border-box;
 }
-.swiper-slide .exhib-card {
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 25px;
-    }
 
-.swiper-slide .exhib-card img.map {
-      width: 40%;
-      height: auto;
-      border-radius: 12px;
-    }
+/* カードコンテンツ */
+.exhib-card {
+  width: 100%;
+  height: 100%;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.04));
+  border: var(--border);
+  box-shadow: var(--shadow-1);
+}
 
-.swiper-slide .exhib-card .title, .group {
-      font-size: 24px;
-      line-height: 1;
-    }
+.exhib-card img.map {
+  width: 60%;
+  height: auto;
+  border-radius: 12px;
+}
 
+.exhib-card .title,
+.exhib-card .group {
+  font-size: 24px;
+  line-height: 1;
+}
+
+/* スライドリンク - 共通 */
 .swiper-slide a {
   text-decoration: none;
+  color: inherit;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ページネーション */
+.swiper-pagination-bullet {
+  background: var(--color-text-muted);
+  opacity: .5;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--color-primary);
+  opacity: 1;
+}
+
+/* 空要素対策 */
+.swiper-slide:empty,
+.swiper-slide > a:empty {
+  display: none !important;
+}
+
+/* Mobile tuning for Swiper - 行350あたり */
+@media (max-width: 600px) {
+  .swiper-container {
+    padding: 16px 0 36px;
+    height: auto;
+  }
+  
+  .swiper-wrapper {
+    height: auto !important; /* 高さを自動に */
+  }
+  
+  .swiper-slide {
+    width: min(80vw, 300px); /* 幅をビューポートの80%か300pxの小さい方に */
+    height: min(80vw, 300px); /* 高さも同じ値に指定してスクエアに */
+    margin: 0 auto; /* センタリング */
+  }
+  
+  .exhib-card {
+    aspect-ratio: 1/1; /* 強制的に正方形に */
+    padding: 8px !important; /* パディングを小さく */
+  }
+  
+  /* カードコンテンツも調整 */
+  .exhib-card .title,
+  .exhib-card .group {
+    font-size: 20px; /* スクエアになるので文字サイズを調整 */
+  }
+  
+  .exhib-card img.map {
+    width: 90%; /* 画像サイズを調整 */
+  }
 }
 
 /* ==========================
@@ -309,7 +400,7 @@ font-family: 'Oswald', sans-serif;
   top: 50%;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, #6aa2ff, #8a7dff, #ff71a7);
+  background: linear-gradient(90deg, #ffffff);
   border-radius: 999px;
   transform: translateY(-50%);
 }
@@ -364,43 +455,6 @@ font-family: 'Oswald', sans-serif;
 .overview_greet .overview_greet-text p { line-height: 2.5; }
 /* .ttl removed */
 
-/* Swiper (cards) */
-/* Ensure container does not expand page width on mobile */
-.swiper-container { width: 100%; max-width: 100%; padding: 24px 0 48px; overflow: hidden; box-sizing: border-box; }
-/* Swiper 既定CSSでは .swiper に overflow: hidden; が入るが、
-   本実装は .swiper-container を使っているため明示的に対応 */
-.swiper-wrapper { display: flex; align-items: stretch; }
-.swiper-slide {
-  height: 300px;               /* 要望: 300pxに縮める */
-  border-radius: 16px;          /* 四角形カード */
-  background: linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.04));
-  border: var(--border);
-  color: var(--color-text);
-  box-shadow: var(--shadow-1);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-.swiper-slide a {
-  color: inherit;
-  font-weight: 600;
-  letter-spacing: .04em;
-  display: flex;                /* クリック範囲を全面に */
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-}
-.swiper-pagination-bullet { background: var(--color-text-muted); opacity: .5; }
-.swiper-pagination-bullet-active { background: var(--color-primary); opacity: 1; }
-
-/* Mobile tuning for Swiper */
-@media (max-width: 600px) {
-  .swiper-container { padding: 16px 0 36px; }
-  .swiper-slide { height: 300px; }
-}
-
 /* Access (moved from inline) */
 .access { padding: 64px 20px; background: color-mix(in srgb, var(--color-surface) 94%, transparent); }
 .access .contents {
@@ -431,7 +485,7 @@ font-family: 'Oswald', sans-serif;
   bottom: -6px;
   width: 100%;
   height: 6px;
-  background: linear-gradient(90deg, #6aa2ff, #8a7dff, #ff71a7);
+  background: linear-gradient(90deg, #ffffff);
   border-radius: 3px;
   opacity: .9;
 }
