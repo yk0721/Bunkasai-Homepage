@@ -217,7 +217,7 @@ body {
 .overview_greet-container{
   margin: 0 auto;
   max-width: 1200px;
-  text-align: center;
+  text-align: left;
   line-height: 3;
 }
 
@@ -238,20 +238,16 @@ font-family: 'Oswald', sans-serif;
 
 .overview_greet-photo-alt{
   line-height: 1.5;
+  text-align: center;
 }
 
-.ttl{
-width: 100%;
-    padding: 100px 0;
-    background: rgb(89, 178, 230);
-    background: linear-gradient(45deg, rgb(89, 178, 230) 0%, rgba(0, 107, 119, 1) 100%);
-}
+/* .ttl wrapper removed */
 
 @media (max-width: 600px) {
   .overview { min-height: auto; }
   .overview_greet-container { padding: 40px 16px; line-height: 1.8; }
   .overview_greet-photo img { height: auto; max-height: 320px; width: auto; }
-  .ttl { padding: 56px 0; }
+  /* .ttl removed */
 }
 
 /* Swiper */
@@ -366,36 +362,43 @@ width: 100%;
   margin-top: var(--space-3);
 }
 .overview_greet .overview_greet-text p { line-height: 2.5; }
-.ttl{
-  padding: 80px 0;
-  border-top: var(--border);
-}
+/* .ttl removed */
 
-/* Swiper (cards/pills) */
+/* Swiper (cards) */
 /* Ensure container does not expand page width on mobile */
 .swiper-container { width: 100%; max-width: 100%; padding: 24px 0 48px; overflow: hidden; box-sizing: border-box; }
 /* Swiper 既定CSSでは .swiper に overflow: hidden; が入るが、
-  本実装は .swiper-container を使っているため明示的に対応 */
+   本実装は .swiper-container を使っているため明示的に対応 */
 .swiper-wrapper { display: flex; align-items: stretch; }
 .swiper-slide {
-  width: auto;
-  min-width: 120px;
-  padding: 14px 18px;
-  margin: 8px;
-  border-radius: 999px;
+  height: 300px;               /* 要望: 300pxに縮める */
+  border-radius: 16px;          /* 四角形カード */
   background: linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.04));
   border: var(--border);
   color: var(--color-text);
   box-shadow: var(--shadow-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
-.swiper-slide a { color: inherit; font-weight: 600; letter-spacing: .04em; }
+.swiper-slide a {
+  color: inherit;
+  font-weight: 600;
+  letter-spacing: .04em;
+  display: flex;                /* クリック範囲を全面に */
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
 .swiper-pagination-bullet { background: var(--color-text-muted); opacity: .5; }
 .swiper-pagination-bullet-active { background: var(--color-primary); opacity: 1; }
 
 /* Mobile tuning for Swiper */
 @media (max-width: 600px) {
   .swiper-container { padding: 16px 0 36px; }
-  .swiper-slide { min-width: 96px; padding: 10px 14px; margin: 6px; }
+  .swiper-slide { height: 300px; }
 }
 
 /* Access (moved from inline) */

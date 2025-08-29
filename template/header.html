@@ -16,12 +16,18 @@
         background: color-mix(in srgb, var(--color-surface, #ffffff) 88%, transparent);
         color: var(--color-text, #333);
         padding: 1rem 0;
-        position: sticky;
+        position: fixed;
         top: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
         border-bottom: var(--border, 1px solid #ddd);
         backdrop-filter: saturate(120%) blur(10px);
         z-index: 1000;
     }
+
+    /* Placeholder to avoid content being hidden under the fixed header */
+    #header { height: 64px; }
 
     .nav-container {
         max-width: 1200px;
@@ -291,8 +297,8 @@
                     <label for="dropdown-toggle-1">教室展示</label>
                     <a href="" style="display: none;">教室展示</a>
                     <ul class="dropdown">
-                        <li><a href="/exhib/J.html">中学展示</a></li>
-                        <li><a href="">高校展示</a></li>
+                        <li><a href="/J.html">中学展示</a></li>
+                        <li><a href="/S.html">高校展示</a></li>
                         <li><a href="">部活展示</a></li>
                         <li><a href="">有志展示</a></li>
                     </ul>

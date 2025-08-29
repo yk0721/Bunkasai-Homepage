@@ -56,24 +56,34 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.class-swiper').forEach(el => {
       if (el.swiper) return;
       new Swiper(el, {
-        slidesPerView: 'auto',
-        spaceBetween: 30,
-        centeredSlides: true,
+        slidesPerView: 3,              // デフォルトは3枚（デスクトップ）
+        spaceBetween: 24,
+        centeredSlides: false,
         loop: true,
         autoplay: { delay: 3000, disableOnInteraction: false },
-        pagination: { el: el.querySelector('.swiper-pagination'), clickable: true }
+        pagination: { el: el.querySelector('.swiper-pagination'), clickable: true },
+        breakpoints: {
+          0:   { slidesPerView: 1, spaceBetween: 16 },  // 900px未満は常に1枚
+          600: { slidesPerView: 1, spaceBetween: 20 },  // タブレットも1枚
+          900: { slidesPerView: 3, spaceBetween: 24 }   // デスクトップで3枚
+        }
       });
     });
 
     document.querySelectorAll('.club-swiper').forEach(el => {
       if (el.swiper) return;
       new Swiper(el, {
-        slidesPerView: 'auto',
-        spaceBetween: 30,
-        centeredSlides: true,
+        slidesPerView: 3,              // デフォルトは3枚（デスクトップ）
+        spaceBetween: 24,
+        centeredSlides: false,
         loop: true,
         autoplay: { delay: 3500, disableOnInteraction: false },
-        pagination: { el: el.querySelector('.swiper-pagination'), clickable: true }
+        pagination: { el: el.querySelector('.swiper-pagination'), clickable: true },
+        breakpoints: {
+          0:   { slidesPerView: 1, spaceBetween: 16 },  // 900px未満は常に1枚
+          600: { slidesPerView: 1, spaceBetween: 20 },  // タブレットも1枚
+          900: { slidesPerView: 3, spaceBetween: 24 }   // デスクトップで3枚
+        }
       });
     });
   }
