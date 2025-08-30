@@ -14,7 +14,7 @@
 
     .header {
         background: color-mix(in srgb, var(--color-surface, #ffffff) 88%, transparent);
-        color: var(--color-text, #333);
+        color: #fff; /* header text white */
         padding: 1rem 0;
         position: fixed;
         top: 0;
@@ -24,6 +24,10 @@
         border-bottom: var(--border, 1px solid #ddd);
         backdrop-filter: saturate(120%) blur(10px);
         z-index: 1000;
+    }
+    
+    .logo a, .logo a:visited {
+        color: #fff; /* logo text white */
     }
 
     /* Placeholder to avoid content being hidden under the fixed header */
@@ -64,7 +68,7 @@
     .hamburger span {
         display: block;
         height: 3px;
-        background: #333;
+        background: #fff; /* hamburger bars white */
         border-radius: 2px;
         transition: all 0.3s ease;
     }
@@ -82,7 +86,7 @@
 
     .main-nav>li>a {
         display: block;
-        color: var(--color-text, #333);
+        color: #fff; /* top-level nav links white */
         text-decoration: none;
         padding: 1rem 1.5rem;
         border-radius: 10px;
@@ -149,6 +153,21 @@
             z-index: 1000;
         }
 
+        /* Expand header to full viewport while the menu is open to avoid clipping of fixed menu */
+        .header:has(#menu-toggle:checked) {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100vw;
+            height: 100vh;
+            max-height: 100vh;
+            overflow: visible;
+            -webkit-backdrop-filter: none !important;
+            backdrop-filter: none !important;
+        }
+
         .main-nav {
             position: fixed;
             top: 0;
@@ -204,7 +223,7 @@
             font-size: 2rem;
             font-weight: bold;
             padding: 1rem 0;
-            color: #333;
+            color: #fff; /* mobile menu links white */
             text-transform: uppercase;
             letter-spacing: 2px;
         }
@@ -231,7 +250,7 @@
 
         .has-dropdown>label {
             display: block;
-            color: #333;
+            color: #fff; /* dropdown label white */
             font-size: 2rem;
             font-weight: bold;
             padding: 1rem 0;
@@ -260,7 +279,7 @@
             text-transform: none;
             letter-spacing: normal;
             border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-            color: var(--color-text, #333);
+            color: #fff; /* mobile dropdown items white */
         }
 
         .dropdown li:last-child a {
@@ -278,7 +297,7 @@
     <header class="header">
         <div class="nav-container">
             <div class="logo">
-                <a href="https://nz-hishosai.com">
+                <a href="../index.html">
                     <p>飛翔祭2025</p>
                 </a>
             </div>
@@ -318,7 +337,7 @@
                     </ul>
                 </li>
 
-                <li><a href="">模擬店</a></li>
+                <li><a href="/F.html">模擬店</a></li>
             </ul>
         </div>
     </header>
