@@ -388,10 +388,16 @@ font-family: 'Oswald', sans-serif;
 }
 .stylish-heading .heading-text {
   font-size: clamp(22px, 3vw, 32px);
-  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-accent));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+}
+
+/* ダークモード時のグラデーションテキスト */
+@media (prefers-color-scheme: dark) {
+  .stylish-heading .heading-text {
+    background: linear-gradient(90deg, var(--color-primary), var(--color-secondary), var(--color-accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
 }
 .heading-line { position: relative; flex: 1; height: 1px; opacity: .7; }
 .heading-line::before {
@@ -400,9 +406,16 @@ font-family: 'Oswald', sans-serif;
   top: 50%;
   width: 100%;
   height: 4px;
-  background: linear-gradient(90deg, #ffffff);
+  background: linear-gradient(90deg, #333333);
   border-radius: 999px;
   transform: translateY(-50%);
+}
+
+/* ダークモードでの見出し線の色 */
+@media (prefers-color-scheme: dark) {
+  .heading-line::before {
+    background: linear-gradient(90deg, #ffffff);
+  }
 }
 .heading-line.left::before { right: 0; }
 .heading-line.right::before { left: 0; }
@@ -485,9 +498,16 @@ font-family: 'Oswald', sans-serif;
   bottom: -6px;
   width: 100%;
   height: 6px;
-  background: linear-gradient(90deg, #ffffff);
+  background: linear-gradient(90deg, #333333);
   border-radius: 3px;
   opacity: .9;
+}
+
+/* ダークモードでのアクセスセクション見出し下線の色 */
+@media (prefers-color-scheme: dark) {
+  .access .text h2::after {
+    background: linear-gradient(90deg, #ffffff);
+  }
 }
 .access .text h3 { margin: 22px 0 8px; font-size: 18px; color: var(--color-text-muted); }
 .access .text p { margin: 6px 0; line-height: 1.9; color: var(--color-text); opacity: .9; }
@@ -573,10 +593,18 @@ a.is-active {
   font-weight: 700; 
   font-size: 14px; 
   letter-spacing: .04em; 
-  color: var(--color-primary, #6aa2ff); 
-  background: color-mix(in srgb, var(--color-primary, #6aa2ff) 14%, transparent); 
+  color: #333333; /* デフォルトで黒色 */
+  background: rgba(200, 200, 200, 0.2); /* 薄いグレー背景 */
   padding: 4px 10px; 
   border-radius: 999px; 
+}
+
+/* ダークモードでの表示 */
+@media (prefers-color-scheme: dark) {
+  .exhib_card .group {
+    color: var(--color-primary, #ffffff);
+    background: color-mix(in srgb, var(--color-primary, #6aa2ff) 14%, transparent);
+  }
 }
 .exhib_card img.map { 
   width: 100%; 

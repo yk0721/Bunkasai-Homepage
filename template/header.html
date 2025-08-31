@@ -14,7 +14,7 @@
 
     .header {
         background: color-mix(in srgb, var(--color-surface, #ffffff) 88%, transparent);
-        color: #fff; /* header text white */
+        color: #333; /* header text dark by default */
         padding: 1rem 0;
         position: fixed;
         top: 0;
@@ -27,7 +27,18 @@
     }
     
     .logo a, .logo a:visited {
-        color: #fff; /* logo text white */
+        color: #333; /* logo text dark by default */
+    }
+    
+    /* ダークモード時の設定 */
+    @media (prefers-color-scheme: dark) {
+        .header {
+            color: #fff; /* ダークモードでは白文字 */
+        }
+        
+        .logo a, .logo a:visited {
+            color: #fff; /* ダークモードではロゴも白文字 */
+        }
     }
 
     /* Placeholder to avoid content being hidden under the fixed header */
@@ -68,9 +79,16 @@
     .hamburger span {
         display: block;
         height: 3px;
-        background: #fff; /* hamburger bars white */
+        background: #333; /* hamburger bars dark by default */
         border-radius: 2px;
         transition: all 0.3s ease;
+    }
+    
+    /* ダークモード時の設定 */
+    @media (prefers-color-scheme: dark) {
+        .hamburger span {
+            background: #fff; /* ダークモードでは白色 */
+        }
     }
 
     .main-nav {
@@ -86,11 +104,18 @@
 
     .main-nav>li>a {
         display: block;
-        color: #fff; /* top-level nav links white */
+        color: #333; /* top-level nav links dark by default */
         text-decoration: none;
         padding: 1rem 1.5rem;
         border-radius: 10px;
         transition: background-color 0.2s ease, color 0.2s ease;
+    }
+    
+    /* ダークモード時の設定 */
+    @media (prefers-color-scheme: dark) {
+        .main-nav>li>a {
+            color: #fff; /* ダークモードでは白色 */
+        }
     }
 
     .main-nav>li>a:hover {
@@ -186,6 +211,12 @@
             transition: all 0.3s ease;
             z-index: 1100;
         }
+        
+        @media (prefers-color-scheme: dark) {
+            .main-nav {
+
+            }
+        }
 
         #menu-toggle:checked~.main-nav {
             opacity: 1;
@@ -223,9 +254,16 @@
             font-size: 2rem;
             font-weight: bold;
             padding: 1rem 0;
-            color: #fff; /* mobile menu links white */
+            color: #333; /* mobile menu links dark by default */
             text-transform: uppercase;
             letter-spacing: 2px;
+        }
+        
+        /* ダークモード時のモバイルメニュー設定 */
+        @media (prefers-color-scheme: dark) {
+            .main-nav>li>a {
+                color: #fff; /* ダークモードでは白色 */
+            }
         }
 
         .dropdown {
@@ -250,7 +288,7 @@
 
         .has-dropdown>label {
             display: block;
-            color: #fff; /* dropdown label white */
+            color: #333; /* dropdown label dark by default */
             font-size: 2rem;
             font-weight: bold;
             padding: 1rem 0;
@@ -258,6 +296,13 @@
             letter-spacing: 2px;
             cursor: pointer;
             position: relative;
+        }
+        
+        /* ダークモード時のドロップダウンラベル設定 */
+        @media (prefers-color-scheme: dark) {
+            .has-dropdown>label {
+                color: #fff; /* ダークモードでは白色 */
+            }
         }
 
         .has-dropdown>label::after {
@@ -278,8 +323,16 @@
             font-weight: normal;
             text-transform: none;
             letter-spacing: normal;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-            color: #fff; /* mobile dropdown items white */
+            border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+            color: #333; /* mobile dropdown items dark by default */
+        }
+        
+        /* ダークモード時のドロップダウンアイテム設定 */
+        @media (prefers-color-scheme: dark) {
+            .dropdown li a {
+                color: #fff; /* ダークモードでは白色 */
+                border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+            }
         }
 
         .dropdown li:last-child a {
