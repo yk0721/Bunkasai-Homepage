@@ -103,6 +103,23 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       });
     });
+
+    document.querySelectorAll('.indv-swiper').forEach(el => {
+      if (el.swiper) return;
+      new Swiper(el, {
+        slidesPerView: 3,              // デフォルトは3枚（デスクトップ）
+        spaceBetween: 24,
+        centeredSlides: false,
+        loop: true,
+        autoplay: false,
+        pagination: { el: el.querySelector('.swiper-pagination'), clickable: true },
+        breakpoints: {
+          0:   { slidesPerView: 1, spaceBetween: 16 },  // 900px未満は常に1枚
+          600: { slidesPerView: 1, spaceBetween: 20 },  // タブレットも1枚
+          900: { slidesPerView: 3, spaceBetween: 24 }   // デスクトップで3枚
+        }
+      });
+    });
   }
 
   // --- ナビのアクティブ表示 ---
