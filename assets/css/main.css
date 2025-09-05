@@ -120,24 +120,22 @@ body {
   }
   .image_overlay {
     position: absolute;
-    top: 0px;
-    right: 0px;
+    top: 0;
+    right: 0;
+    left: auto;
     height: 100%;
     width: 50%;
-    align-content: top;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* 右側パネル内で中央寄せ */
+    justify-content: center; /* 垂直中央 */
     text-align: center;
     font-size: 40px;
+    padding-right: 0;
   }
-  .items {
-    position: relative;
-    top: 50%;
-    right: 0;
-  }
-  .logo_image {
-    width: auto;
-    height: 50%;
-    z-index: 5;
-  }
+  .logo_container { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+  .items { position: static; top: auto; right: auto; }
+  .logo_image { width: clamp(220px, 28vw, 520px); height: auto; z-index: 5; }
 }
 @media screen and (max-width: 860px) {
   div.back-resize img.spback_img {
@@ -421,19 +419,20 @@ font-family: 'Oswald', sans-serif;
 .heading-line.right::before { left: 0; }
 
 /* Countdown blocks */
-.countdown-title { font-size: clamp(18px, 2.5vw, 24px); color: var(--color-text-muted); }
+.countdown-title { font-size: clamp(18px, 2.5vw, 24px); color: var(--color-text-muted); margin-bottom: clamp(10px, 1.6vw, 24px); }
+.countdown-timer { margin-top: clamp(8px, 1.2vw, 20px); margin-bottom: clamp(8px, 1.2vw, 20px); gap: clamp(8px, 1.6vw, 24px); }
 .time-block {
   display: grid;
   place-items: center;
-  min-width: 64px;
-  padding: 10px 12px;
+  min-width: clamp(56px, 8vw, 80px);
+  padding: clamp(8px, 1.2vw, 14px) clamp(10px, 1.6vw, 16px);
   border-radius: var(--radius-md);
   background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.02));
   border: var(--border);
   box-shadow: var(--shadow-1);
 }
-.time-block > span:first-child { font-size: 28px; font-weight: 700; }
-.time-block .label { font-size: 12px; color: var(--color-text-muted); }
+.time-block > span:first-child { font-size: clamp(22px, 3vw, 34px); font-weight: 700; }
+.time-block .label { font-size: clamp(10px, 1.2vw, 14px); color: var(--color-text-muted); }
 
 /* Overview tuning */
 .overview {
@@ -661,8 +660,7 @@ a.is-active {
   max-width: 800px;
   margin: 0 auto 32px;
   padding: 16px 24px;
-  background: rgba(255, 249, 219, 0.8);
-  border: 1px solid #ffe066;
+  background: #a9b3c6;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
@@ -678,7 +676,7 @@ a.is-active {
 
 .food-price {
   display: inline-block;
-  background: #ff9500;
+  background: #a9b3c6;
   color: white;
   font-weight: bold;
   padding: 2px 10px;
