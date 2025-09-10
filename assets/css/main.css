@@ -51,6 +51,8 @@
 /* Reset (minimal) */
 *, *::before, *::after { box-sizing: border-box; }
 html, body { height: 100%; }
+/* 強制的に横スクロールを抑止（根本原因特定用の一時措置。原因特定後に外しても可）*/
+html { overflow-x: clip; /* 対応していないブラウザ向け */ overflow-x: hidden; width:100%; }
 body, h1, h2, h3, h4, p, ul, ol { margin: 0; }
 ul, ol { padding-left: 1.2rem; }
 img, video { max-width: 100%; height: auto; display: block; }
@@ -58,7 +60,7 @@ button, input, select, textarea { font: inherit; }
 
 /* Base */
 body {
-  width: 100vw;
+  width: 100%;
   overflow-x: hidden;
   background: var(--color-bg);
   color: var(--color-text);
@@ -68,8 +70,17 @@ body {
   line-height: 1.7;
 }
 
+/* --- Global overflow helpers --- */
+/* 任意のラッパーに付与して強制的に横スクロール抑止 */
+.no-x-scroll { overflow-x: hidden !important; }
+.clip-children { overflow: hidden !important; position: relative; }
+/* デバッグ: はみ出している要素を視覚化（コンソール等で document.body.classList.add('debug-overflow')）*/
+body.debug-overflow * { outline: 1px solid rgba(255,0,0,0.25); }
+body.debug-overflow *:hover { outline-color: rgba(255,0,0,0.6); }
+
 .container {
-  width: min(100% - 32px, var(--container));
+  /* 100% - 32px は calc() 必須。旧記法は無効値になり得るため修正 */
+  width: min(calc(100% - 32px), var(--container));
   margin-inline: auto;
 }
 
@@ -140,7 +151,8 @@ body {
 @media screen and (max-width: 860px) {
   div.back-resize img.spback_img {
     position: relative;
-    width: 100vw;
+    /* 100vw は縦スクロールバー幅分だけ横にはみ出すため 100% に */
+    width: 100%;
     z-index: 1;
     filter: blur(5px);
   height: auto; /* allow shrink on small screens */
@@ -157,6 +169,8 @@ body {
     text-align: center;
     font-size: 30px;
     z-index: 10;
+  /* 余白を詰める */
+  padding-top: clamp(16px, 4vh, 40px);
   }
   .items::before,
   .countdown-timer::before,
@@ -172,18 +186,25 @@ body {
   }
   .logo_container {
     position: relative;
-    padding-top: 30vh;
-    text-align: center;
+  /* 上部余白+絶対配置による重なりを解消 */
+  padding-top: clamp(24px, 8vh, 72px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(12px, 3vh, 28px);
   }
 
   .logo_image {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  width: clamp(160px, 60vw, 440px);
-  height: auto; /* keep aspect & allow shrink */
+  /* 通常フローに戻す */
+  position: relative;
+  top: auto;
+  left: auto;
+  transform: none;
+  width: clamp(180px, 55vw, 360px);
+  height: auto; /* keep aspect */
   max-width: 100%;
+  margin: 0 auto;
   }
 
   .items {
@@ -194,10 +215,12 @@ body {
     position: relative;
     display: inline-block;
     text-align: center;
+  margin-top: 4px; /* ロゴとの間隔 */
   }
   .countdown-timer {
     position: relative;
     display: inline-flex;
+  margin-top: 4px; /* ロゴとの間隔 */
   }
 }
 
@@ -549,7 +572,13 @@ a.is-active {
 .exhib-slider .swiper-container { 
   padding: 16px 0 36px; 
   height: auto !important; 
-  overflow: visible; 
+  /* 元は overflow: visible; だったためスライドのはみ出しが切れなかった */
+  overflow: hidden; 
+  position: relative; /* クリップ基準 */
+}
+/* もし一部で意図的に外側へドロップシャドウ等を表示したい場合は below クラスを付与 */
+.exhib-slider .swiper-container.overflow-visible {
+  overflow: visible;
 }
 .exhib-slider .swiper-wrapper { 
   height: auto !important; 
