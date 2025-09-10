@@ -627,6 +627,12 @@ a.is-active {
   border-radius: 999px; 
 }
 
+/* ルート直下 index 以外のページでライトモード時に白く残るケースを強制上書き */
+body:not(.index) .exhib_card .group { color: #333 !important; }
+@media (prefers-color-scheme: light) {
+  body:not(.index) .exhib_card .group { color:#333 !important; }
+}
+
 /* ダークモードでの表示 */
 @media (prefers-color-scheme: dark) {
   .exhib_card .group {
