@@ -1,4 +1,34 @@
 // Header & Footer inject + Countdown
+// === Pinch Blocker (ピンチだけ禁止 / 通常のブラウザズームは許可) ===
+// 目的: ユーザースケール UI (Ctrl+ + / ブラウザ設定) は使える状態を保ちつつ、
+//       モバイルのピンチ操作による accidental zoom を防ぐ。
+// 解除方法: 下の ENABLE_PINCH を true にするか、この即時関数を削除。
+(function pinchOnlyBlock(){
+  const ENABLE_PINCH = false; // true にするとピンチ再許可
+  if(ENABLE_PINCH) return;
+
+  // iOS Safari の gesture* イベントを抑止 (ピンチ開始を止める)
+  ['gesturestart','gesturechange','gestureend'].forEach(ev => {
+    document.addEventListener(ev, e => { e.preventDefault(); }, { passive:false });
+  });
+
+  // マルチタッチ (2本以上) / scale 変化時を検出して抑止
+  function isPinchEvent(e){
+    return (e.touches && e.touches.length > 1) || (typeof e.scale === 'number' && e.scale !== 1);
+  }
+  window.addEventListener('touchmove', e => {
+    if(isPinchEvent(e)) e.preventDefault();
+  }, { passive:false });
+
+  // (任意) 特定要素内でピンチを許可したい場合:
+  // 1. 下記コメントアウトを解除
+  // 2. 対象要素に data-allow-pinch="true" を付与
+  // window.addEventListener('touchmove', e => {
+  //   const target = e.target.closest('[data-allow-pinch]');
+  //   if(target) return; // 許可領域
+  //   if(isPinchEvent(e)) e.preventDefault();
+  // }, { passive:false });
+})();
 document.addEventListener('DOMContentLoaded', () => {
   // Inject header
   const headerMount = document.querySelector('#header');

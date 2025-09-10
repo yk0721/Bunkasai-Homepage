@@ -184,11 +184,23 @@
             top: 0;
             left: 0;
             right: 0;
-            bottom: 0;
-            width: 100vw;
+            bottom: 0; /* Use inset instead of explicit width:100vw to avoid horizontal scroll from scrollbar width */
+            /* width:100vw would include the scrollbar width and create horizontal overflow on some pages */
+            width: 100%;
+            /* Prefer dynamic viewport height where supported to avoid iOS URL bar issues */
             height: 100vh;
             max-height: 100vh;
-            overflow: visible;
+            /* Override with 100dvh when supported */
+        }
+        @supports (height: 100dvh) {
+            .header:has(#menu-toggle:checked) {
+                height: 100dvh;
+                max-height: 100dvh;
+            }
+        }
+        .header:has(#menu-toggle:checked) {
+            /* Hide overflow to prevent any inner element from causing horizontal scroll */
+            overflow: hidden;
             -webkit-backdrop-filter: none !important;
             backdrop-filter: none !important;
         }
@@ -213,9 +225,7 @@
         }
         
         @media (prefers-color-scheme: dark) {
-            .main-nav {
-
-            }
+            /* (dark mode overrides for .main-nav were intentionally removed; keep block for future use) */
         }
 
         #menu-toggle:checked~.main-nav {
