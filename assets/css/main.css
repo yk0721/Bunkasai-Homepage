@@ -330,6 +330,7 @@ font-family: 'Oswald', sans-serif;
 .exhib-card .group {
   font-size: 24px;
   line-height: 1;
+  color: var(--color-text); /* テーマに合わせて色を設定 */
 }
 
 /* スライドリンク - 共通 */
@@ -620,23 +621,23 @@ a.is-active {
   display: inline-block; 
   font-weight: 700; 
   font-size: 14px; 
-  letter-spacing: .04em; 
-  color: #333333; /* デフォルトで黒色 */
   background: rgba(200, 200, 200, 0.2); /* 薄いグレー背景 */
   padding: 4px 10px; 
   border-radius: 999px; 
 }
 
-/* ルート直下 index 以外のページでライトモード時に白く残るケースを強制上書き */
-body:not(.index) .exhib_card .group { color: #333 !important; }
+/* ライトモードでの表示 */
 @media (prefers-color-scheme: light) {
-  body:not(.index) .exhib_card .group { color:#333 !important; }
-}
+  .group {
+    color: #333 !important;
+   background: color-mix(in srgb, var(--color-primary, #6aa2ff) 14%, transparent);background: color-mix(in srgb, var(--color-primary, #6aa2ff) 14%, transparent);
+  }
+  }
 
 /* ダークモードでの表示 */
 @media (prefers-color-scheme: dark) {
   .exhib_card .group {
-    color: var(--color-primary, #ffffff);
+    color: #ffffff;
     background: color-mix(in srgb, var(--color-primary, #6aa2ff) 14%, transparent);
   }
 }
@@ -718,4 +719,16 @@ body:not(.index) .exhib_card .group { color: #333 !important; }
   border-radius: 16px;
   font-size: 14px;
   margin-top: 4px;
+}
+
+/* .groupクラス全般のスタイル（上記の特定のコンテナでオーバーライドされない場合） */
+.group {
+  color: #333333; /* ライトモードではデフォルトで黒色 */
+}
+
+/* ダークモードでの一般的な.groupクラス */
+@media (prefers-color-scheme: dark) {
+  .group {
+    color: #ffffff; /* ダークモードではデフォルトで白色 */
+  }
 }
