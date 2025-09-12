@@ -34,6 +34,8 @@
   --space-12: 48px;
   --space-16: 64px;
   --container: 1200px;
+  /* schedule */
+  --schedule-time-width: 8.5em; /* 時間ボックス幅 (以前:7em) */
 }
 
 @media (prefers-color-scheme: light) {
@@ -759,7 +761,7 @@ a.is-active {
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 7em;
+  width: var(--schedule-time-width);
     height: 2em;
     border-radius: 6px;
     background-color: #3388dd;
@@ -787,13 +789,18 @@ a.is-active {
 .schedule_content_title {
     font-weight: bold;
 }
-
+.ttdate {
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: bold;
+}
 @media screen and (max-width: 860px) {
     .schedule::before {
-  top: -30px; /* 少し上に伸ばす */
-  left: 6.5em;
+  top: 0; /* コンテンツ内に収める */
+  bottom: 0; /* 下にはみ出さない */
+  left: calc(var(--schedule-time-width) - 0.5em); /* ボックス幅依存 */
   width: 6px;
-  height: calc(100% + 60px); /* 上へ出した分を加算 */
+  height: auto; /* top & bottom で伸縮 */
     }
     .schedule li {
         display: flex;
@@ -809,13 +816,13 @@ a.is-active {
         transform: translateX(50%) translateY(-50%) rotate(45deg);
     }
     .schedule_time::after {
-        top: 50%;
-        left: 6em;
+  top: 50%;
+  left: calc(var(--schedule-time-width) - 1em); /* 元の(幅-1em) ロジック */
         transform: translateY(-50%);
     }
     .schedule_content {
-        margin: 0px 0px 0px 3em;
-        width: calc(100% - 10em);
+  margin: 0 0 0 3.5em; /* 時間枠拡張に伴い微調整 */
+  width: calc(100% - (var(--schedule-time-width) + 3em));
     }
 }
 @media screen and (min-width: 861px) {
