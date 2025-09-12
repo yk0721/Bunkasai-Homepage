@@ -736,6 +736,7 @@ a.is-active {
 .schedule {
     position: relative;
     font-size: 14px;
+    align-items: center;
 }
 .schedule::before {
     position: absolute;
@@ -789,10 +790,10 @@ a.is-active {
 
 @media screen and (max-width: 860px) {
     .schedule::before {
-        top: 0px;
-        left: 6.5em;
-        width: 6px;
-        height: 100%;
+  top: -30px; /* 少し上に伸ばす */
+  left: 6.5em;
+  width: 6px;
+  height: calc(100% + 60px); /* 上へ出した分を加算 */
     }
     .schedule li {
         display: flex;
@@ -817,13 +818,15 @@ a.is-active {
         width: calc(100% - 10em);
     }
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 861px) {
     .schedule::before {
-        top: 3.5em;
-        left: 0px;
-        transform: translateY(-50%);
-        width: 100%;
-        height: 5px;
+  top: 3.5em;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(1400px, 120%); /* 画面より少し長く */
+  max-width: 1600px;
+  height: 6px; /* 少し太く */
+  border-radius: 3px;
     }
     .schedule ul {
         display: flex;
