@@ -346,15 +346,15 @@ font-family: 'Oswald', sans-serif;
   justify-content: center;
 }
 
-/* ページネーション */
-.swiper-pagination-bullet {
-  background: var(--color-text-muted);
-  opacity: .5;
-}
+@media (prefers-color-scheme: dark) {
+  .swiper-pagination-bullet {
+    background: #ffffff !important;
+    opacity: 1;
+  }
 
-.swiper-pagination-bullet-active {
-  background: var(--color-primary);
-  opacity: 1;
+  .swiper-pagination-bullet-active {
+    background-color: #007aff !important;
+  }
 }
 
 /* 空要素対策 */
