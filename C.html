@@ -10,18 +10,91 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <style>
     /* Slider tuning (match J.html) */
-    .exhib-slider .swiper-container { padding: 16px 0 36px; height: auto !important; overflow: visible; }
-    .exhib-slider .swiper-wrapper { height: auto !important; }
-    .exhib-slider .swiper-slide { background: transparent; box-shadow: none; display: flex; align-items: stretch; justify-content: stretch; padding: 6px; height: auto !important; overflow: visible; }
-    .exhib-slider .swiper-slide a { display: flex; width: 100%; height: 100%; align-items: stretch; justify-content: stretch; text-decoration: none; }
+    .exhib-slider .swiper-container {
+      padding: 16px 0 36px;
+      height: auto !important;
+      overflow: visible;
+    }
 
-    .exhib_card { background: var(--color-card, rgba(255,255,255,0.96)); border: var(--border, 1px solid rgba(0,0,0,0.08)); border-radius: 16px; padding: 16px; box-shadow: var(--shadow-1, 0 8px 24px rgba(0,0,0,0.08)); display: flex; flex-direction: column; width: 100%; height: auto; box-sizing: border-box; gap: 12px; overflow: visible; }
-    .exhib_card .group { display: inline-block; font-weight: 700; font-size: 14px; letter-spacing: .04em; color: var(--color-primary, #6aa2ff); background: color-mix(in srgb, var(--color-primary, #6aa2ff) 14%, transparent); padding: 4px 10px; border-radius: 999px; }
-    .exhib_card img.map { width: 100%; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 12px; box-shadow: inset 0 0 0 1px rgba(0,0,0,.04); }
-    .title { font-size: 18px; line-height: 1.4; margin: 4px 0 2px; }
-    .desc { display: block; color: var(--color-text-muted, #666); font-size: 14px; line-height: 1.6; word-break: break-word; }
-    .desc p { margin: 0 0 8px; }
-    .desc p:last-child { margin-bottom: 0; }
+    .exhib-slider .swiper-wrapper {
+      height: auto !important;
+    }
+
+    .exhib-slider .swiper-slide {
+      background: transparent;
+      box-shadow: none;
+      display: flex;
+      align-items: stretch;
+      justify-content: stretch;
+      padding: 6px;
+      height: auto !important;
+      overflow: visible;
+    }
+
+    .exhib-slider .swiper-slide a {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      align-items: stretch;
+      justify-content: stretch;
+      text-decoration: none;
+    }
+
+    .exhib_card {
+      background: var(--color-card, rgba(255, 255, 255, 0.96));
+      border: var(--border, 1px solid rgba(0, 0, 0, 0.08));
+      border-radius: 16px;
+      padding: 16px;
+      box-shadow: var(--shadow-1, 0 8px 24px rgba(0, 0, 0, 0.08));
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      height: auto;
+      box-sizing: border-box;
+      gap: 12px;
+      overflow: visible;
+    }
+
+    .exhib_card .group {
+      display: inline-block;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: .04em;
+      color: var(--color-primary, #6aa2ff);
+      background: color-mix(in srgb, var(--color-primary, #6aa2ff) 14%, transparent);
+      padding: 4px 10px;
+      border-radius: 999px;
+    }
+
+    .exhib_card img.map {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .04);
+    }
+
+    .title {
+      font-size: 18px;
+      line-height: 1.4;
+      margin: 4px 0 2px;
+    }
+
+    .desc {
+      display: block;
+      color: var(--color-text-muted, #666);
+      font-size: 14px;
+      line-height: 1.6;
+      word-break: break-word;
+    }
+
+    .desc p {
+      margin: 0 0 8px;
+    }
+
+    .desc p:last-child {
+      margin-bottom: 0;
+    }
   </style>
 </head>
 
@@ -38,7 +111,7 @@
 
     <div class="swiper-container indv-swiper">
       <div class="swiper-wrapper">
-  <div class="swiper-slide"><a id="nanzan-art-expo" href="#nanzan-art-expo">
+        <div class="swiper-slide"><a id="nanzan-art-expo" href="#nanzan-art-expo">
             <div class="exhib_card">
               <span class="group">美術同好会</span>
               <img src="assets/img/J1D.png" class="map">
@@ -50,7 +123,7 @@
               </div>
             </div>
           </a></div>
-  <div class="swiper-slide"><a id="waterside-creatures-for-the-future" href="#waterside-creatures-for-the-future">
+        <div class="swiper-slide"><a id="waterside-creatures-for-the-future" href="#waterside-creatures-for-the-future">
             <div class="exhib_card">
               <span class="group">理科部生物班</span>
               <img src="assets/img/J1E.png" class="map">
@@ -64,15 +137,17 @@
               </div>
             </div>
           </a></div>
-  <div class="swiper-slide"><a id="moment-to-memories" href="#moment-to-memories">
+        <div class="swiper-slide"><a id="moment-to-memories" href="#moment-to-memories">
             <div class="exhib_card">
               <span class="group">写真部</span>
               <img src="assets/img/J1C.png" class="map">
               <span class="title">moment to memories</span><br>
-              <div class="desc"><p>私たち写真部員それぞれの思い出の瞬間をぜひ見てください！</p></div>
+              <div class="desc">
+                <p>私たち写真部員それぞれの思い出の瞬間をぜひ見てください！</p>
+              </div>
             </div>
           </a></div>
-  <div class="swiper-slide"><a id="twinkle-stars" href="#twinkle-stars">
+        <div class="swiper-slide"><a id="twinkle-stars" href="#twinkle-stars">
             <div class="exhib_card">
               <span class="group">理科部天文班</span>
               <img src="assets/img/J1B.png" class="map">
@@ -87,7 +162,7 @@
               </div>
             </div>
           </a></div>
-  <div class="swiper-slide"><a id="the-world-created-by-radio" href="#the-world-created-by-radio">
+        <div class="swiper-slide"><a id="the-world-created-by-radio" href="#the-world-created-by-radio">
             <div class="exhib_card">
               <span class="group">無線部</span>
               <img src="assets/img/S3E.png" class="map">
@@ -102,7 +177,7 @@
               </div>
             </div>
           </a></div>
-  <div class="swiper-slide"><a id="shi-about-japanese-castles" href="#shi-about-japanese-castles">
+        <div class="swiper-slide"><a id="shi-about-japanese-castles" href="#shi-about-japanese-castles">
             <div class="exhib_card">
               <span class="group">歴史研究同好会</span>
               <img src="assets/img/shakaika.png" class="map">
@@ -117,7 +192,7 @@
               </div>
             </div>
           </a></div>
-  <div class="swiper-slide"><a id="shogi-with-nanzan-boys" href="#shogi-with-nanzan-boys">
+        <div class="swiper-slide"><a id="shogi-with-nanzan-boys" href="#shogi-with-nanzan-boys">
             <div class="exhib_card">
               <span class="group">将棋部</span>
               <img src="assets/img/S3D.png" class="map">
@@ -128,7 +203,8 @@
               </div>
             </div>
           </a></div>
-  <div class="swiper-slide"><a id="nanzan-magic-school-trial-admission" href="#nanzan-magic-school-trial-admission">
+        <div class="swiper-slide"><a id="nanzan-magic-school-trial-admission"
+            href="#nanzan-magic-school-trial-admission">
             <div class="exhib_card">
               <span class="group">奇術部</span>
               <img src="assets/img/J1A.png" class="map">
@@ -140,7 +216,7 @@
               </div>
             </div>
           </a></div>
-  <div class="swiper-slide"><a id="english-club-pavilion" href="#english-club-pavilion">
+        <div class="swiper-slide"><a id="english-club-pavilion" href="#english-club-pavilion">
             <div class="exhib_card">
               <span class="group">English Club</span>
               <img src="assets/img/chu1.png" class="map">
@@ -154,7 +230,7 @@
               </div>
             </div>
           </a></div>
-  <div class="swiper-slide"><a id="past-and-future-of-pc-club" href="#past-and-future-of-pc-club">
+        <div class="swiper-slide"><a id="past-and-future-of-pc-club" href="#past-and-future-of-pc-club">
             <div class="exhib_card">
               <span class="group">パソコン同好会</span>
               <img src="assets/img/pc.png" class="map">
@@ -165,12 +241,14 @@
               </div>
             </div>
           </a></div>
-  <div class="swiper-slide"><a id="fossils-and-our-minerals" href="#fossils-and-our-minerals">
+        <div class="swiper-slide"><a id="fossils-and-our-minerals" href="#fossils-and-our-minerals">
             <div class="exhib_card">
               <span class="group">理科部地質班</span>
               <img src="assets/img/sentaku.png" class="map">
               <span class="title">化石と私たちの鉱石</span><br>
-              <div class="desc"><p>理科部地質班は化石のクリーニング、鉱物の実験、化石の採集、展示などさまざまな活動を行っています。</p></div>
+              <div class="desc">
+                <p>理科部地質班は化石のクリーニング、鉱物の実験、化石の採集、展示などさまざまな活動を行っています。</p>
+              </div>
             </div>
           </a></div>
       </div>
