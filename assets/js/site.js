@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
       els.hours.textContent = '00';
       els.minutes.textContent = '00';
       els.seconds.textContent = '00';
-      if (els.title) els.title.textContent = '飛翔祭開催中！';
+      // if (els.title) els.title.textContent = '飛翔祭開催中！'; //
     }
   }
 
